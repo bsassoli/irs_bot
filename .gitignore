@@ -37,3 +37,15 @@ chromadb/
 *.egg
 *.egg-info
 *.whl
+
+# claude stuff
+CLAUDE.md
+
+# flask stuff
+*.flaskenv
+
+# react-ui
+react-ui/node_modules/
+react-ui/package-lock.json
+# react-ui build
+react-ui/build/

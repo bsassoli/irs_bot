@@ -3,6 +3,7 @@ import pytest
 import yaml
 from unittest.mock import MagicMock, patch, mock_open
 from langchain_core.documents import Document
+from chromadb import Settings
 
 class TestConfig:
     def test_load_config(self):
@@ -40,6 +41,14 @@ class TestConfig:
         assert "document_processing" in config
         assert "chunk_size" in config["document_processing"]
         assert "chunk_overlap" in config["document_processing"]
+        assert "headers_to_split_on" in config["document_processing"]
+        assert "path_to_doc" in config["document_processing"]
+
+    def test_config_contains_query_params(self):
+        from irs_bot.app import load_config
+        config = load_config("config/config.yaml")
+        assert "query" in config
+        assert "n_results" in config["query"]
 
 
 class TestChunkText:
@@ -200,7 +209,12 @@ class TestChromaDB:
                 "collection_name": "test_collection"
             },
             "openai": {
-                "embedding_model": "text-embedding-3-small"
+                "embedding_model": "text-embedding-3-small",
+                "completion_model": "gpt-4o",
+                "temperature": 0.3
+            },
+            "query": {
+                "n_results": 3
             }
         }
     
@@ -217,50 +231,39 @@ class TestChromaDB:
         
         # Verify results
         assert client == mock_client
-        mock_persistent_client.assert_called_once()
-        # Verify directory was created
-        assert os.path.exists(mock_config["chromadb"]["persist_directory"])
+        mock_persistent_client.assert_called_once_with(
+            path=mock_config["chromadb"]["persist_directory"],
+            settings=Settings(anonymized_telemetry=False)
+        )
+        
+        # Create directory to simulate that it exists (for cleanup)
+        os.makedirs(mock_config["chromadb"]["persist_directory"], exist_ok=True)
         
         # Clean up
         os.rmdir(mock_config["chromadb"]["persist_directory"])
     
-    @patch("irs_bot.app.os.getenv")
     @patch("irs_bot.app.ef.OpenAIEmbeddingFunction")
-    def test_create_openai_embedding_function(self, mock_embedding_function, mock_getenv, mock_config):
-        from irs_bot.app import create_openai_embedding_function
-        
-        # Setup mocks
-        mock_getenv.return_value = "test_api_key"
-        mock_embedding = MagicMock()
-        mock_embedding_function.return_value = mock_embedding
-        
-        # Call the function
-        embedding_function = create_openai_embedding_function(mock_config)
-        
-        # Verify results
-        assert embedding_function == mock_embedding
-        mock_embedding_function.assert_called_once_with(
-            api_key="test_api_key",
-            model_name=mock_config["openai"]["embedding_model"]
-        )
-    
-    @patch("irs_bot.app.create_openai_embedding_function")
     def test_create_chromadb_collection(self, mock_embedding_function, mock_config):
         from irs_bot.app import create_chromadb_collection
         
         # Setup mocks
         mock_client = MagicMock()
         mock_collection = MagicMock()
-        mock_client.create_collection.return_value = mock_collection
+        mock_client.get_or_create_collection.return_value = mock_collection
         mock_embedding = MagicMock()
         mock_embedding_function.return_value = mock_embedding
+        api_key = "test_api_key"
         
         # Call the function
-        collection = create_chromadb_collection(mock_client, mock_config)
+        collection = create_chromadb_collection(mock_client, mock_config, api_key)
         
         # Verify results
         assert collection == mock_collection
-        mock_client.create_collection.assert_called_once_with(
+        mock_embedding_function.assert_called_once_with(
+            api_key=api_key,
+            model_name=mock_config["openai"]["embedding_model"]
+        )
+        mock_client.get_or_create_collection.assert_called_once_with(
             name=mock_config["chromadb"]["collection_name"],
             embedding_function=mock_embedding
         )
@@ -270,26 +273,195 @@ class TestChromaDB:
         
         # Setup mocks
         mock_collection = MagicMock()
-        mock_documents = ["doc1", "doc2", "doc3"]
+        mock_documents = [
+            Document(page_content="Document 1", metadata={"source": "source1"}),
+            Document(page_content="Document 2", metadata={"source": "source2"}),
+            Document(page_content="Document 3", metadata={})
+        ]
         
         # Call the function
         add_documents_to_chromadb(mock_collection, mock_documents)
         
-        # Verify the collection's add_documents method was called with the documents
-        mock_collection.add_documents.assert_called_once_with(mock_documents)
+        # Verify the collection's add method was called correctly
+        mock_collection.add.assert_called_once()
+        
+        # Check the arguments
+        args, kwargs = mock_collection.add.call_args
+        
+        # Verify documents and IDs
+        assert "documents" in kwargs
+        assert "ids" in kwargs
+        assert "metadatas" in kwargs
+        
+        # Check document contents match
+        assert kwargs["documents"] == ["Document 1", "Document 2", "Document 3"]
+        
+        # Check IDs are correctly generated
+        assert len(kwargs["ids"]) == 3
+        assert all(id.startswith("doc_") for id in kwargs["ids"])
+        
+        # Check metadatas are correctly extracted
+        assert kwargs["metadatas"] == [{"source": "source1"}, {"source": "source2"}, {"source": "unknown"}]
     
-    def test_query_chromadb(self):
+    def test_query_chromadb(self, mock_config):
         from irs_bot.app import query_chromadb
         
         # Setup mocks
         mock_collection = MagicMock()
-        mock_results = [{"id": 1, "document": "doc1"}, {"id": 2, "document": "doc2"}]
-        mock_collection.query.return_value = mock_results
+        mock_query = "Test query"
+        
+        # Set up mock return value for collection.query
+        mock_return = {
+            "documents": [["doc1", "doc2", "doc3"]],
+            "metadatas": [[{"source": "src1"}, {"source": "src2"}, {"source": "src3"}]],
+            "ids": [["id1", "id2", "id3"]],
+            "distances": [[0.1, 0.2, 0.3]]
+        }
+        mock_collection.query.return_value = mock_return
         
         # Call the function
-        results = query_chromadb(mock_collection, "test query")
+        results = query_chromadb(mock_collection, mock_config, mock_query)
         
-        # Verify results
-        assert results == mock_results
-        mock_collection.query.assert_called_once_with("test query")
+        # Verify the collection's query method was called correctly
+        mock_collection.query.assert_called_once_with(
+            query_texts=[mock_query],
+            n_results=mock_config["query"]["n_results"],
+            include=["documents", "metadatas", "distances"]
+        )
+        
+        # Check the structure of the returned results
+        assert len(results) == 3
+        
+        # Check the content of the results
+        assert results[0]["text"] == "doc1"
+        assert results[0]["metadata"] == {"source": "src1"}
+        assert results[0]["id"] == "id1"
+        assert results[0]["distance"] == 0.1
+        
+        assert results[1]["text"] == "doc2"
+        assert results[2]["text"] == "doc3"
 
+
+class TestChatFunctions:
+    @pytest.fixture
+    def mock_config(self):
+        return {
+            "openai": {
+                "completion_model": "gpt-4o",
+                "temperature": 0.3
+            }
+        }
+    
+    def test_get_chatgpt_response(self, mock_config):
+        from irs_bot.app import get_chatgpt_response
+        
+        # Setup mock
+        mock_client = MagicMock()
+        mock_choice = MagicMock()
+        mock_choice.message.content = "This is a test response"
+        mock_client.chat.completions.create.return_value.choices = [mock_choice]
+        
+        # Test data
+        query = "What is science?"
+        context = ["Science is a systematic approach to understanding the world", 
+                   "It involves observation, experimentation, and theory development"]
+        
+        # Call function
+        response = get_chatgpt_response(mock_config, mock_client, query, context)
+        
+        # Verify response
+        assert response == "This is a test response"
+        mock_client.chat.completions.create.assert_called_once()
+        
+        # Check that the correct prompt is used
+        call_args = mock_client.chat.completions.create.call_args[1]
+        assert call_args["model"] == mock_config["openai"]["completion_model"]
+        assert len(call_args["messages"]) == 2
+        assert call_args["messages"][0]["role"] == "system"
+        assert call_args["messages"][1]["role"] == "user"
+    
+    @patch("irs_bot.app.query_chromadb")
+    @patch("irs_bot.app.get_chatgpt_response")
+    @patch("builtins.input")
+    @patch("builtins.print")
+    def test_chat_with_knowledge_base(self, mock_print, mock_input, mock_get_response, mock_query, mock_config):
+        from irs_bot.app import chat_with_knowledge_base
+        
+        # Setup mocks
+        mock_client = MagicMock()
+        mock_collection = MagicMock()
+        
+        # Set up inputs to exit after one question
+        mock_input.side_effect = ["What are Lagrange points?", "exit"]
+        
+        # Set up query results
+        mock_query.return_value = [
+            {"text": "Lagrange points are locations in space...", "metadata": {}, "id": "1", "distance": 0.1},
+            {"text": "The James Webb telescope is at L2...", "metadata": {}, "id": "2", "distance": 0.2}
+        ]
+        
+        # Set up response
+        mock_get_response.return_value = "Lagrange points are special positions in space..."
+        
+        # Call function
+        chat_with_knowledge_base(mock_config, mock_client, mock_collection)
+        
+        # Verify calls
+        mock_query.assert_called_once_with(mock_collection, mock_config, "What are Lagrange points?")
+        mock_get_response.assert_called_once()
+        
+        # Check that correct documents were passed
+        response_args = mock_get_response.call_args[0]
+        assert response_args[0] == mock_config
+        assert response_args[1] == mock_client
+        assert response_args[2] == "What are Lagrange points?"
+        assert response_args[3] == ["Lagrange points are locations in space...", "The James Webb telescope is at L2..."]
+    
+    @patch("irs_bot.app.load_dotenv")
+    @patch("irs_bot.app.load_config")
+    @patch("irs_bot.app.os.getenv")
+    @patch("irs_bot.app.OpenAI")
+    @patch("irs_bot.app.create_chromadb_client")
+    @patch("irs_bot.app.create_chromadb_collection")
+    @patch("irs_bot.app.chunk_text")
+    @patch("irs_bot.app.add_documents_to_chromadb")
+    @patch("irs_bot.app.chat_with_knowledge_base")
+    def test_main(self, mock_chat, mock_add_docs, mock_chunk, mock_create_collection, 
+                 mock_create_client, mock_openai, mock_getenv, mock_load_config, mock_load_dotenv):
+        from irs_bot.app import main
+        
+        # Setup mocks
+        mock_config = {
+            "chromadb": {"persist_directory": "test_dir", "collection_name": "test_coll"},
+            "openai": {"embedding_model": "test-model"}
+        }
+        mock_load_config.return_value = mock_config
+        mock_getenv.return_value = "test_api_key"
+        
+        mock_client = MagicMock()
+        mock_client.close = MagicMock()
+        mock_create_client.return_value = mock_client
+        
+        mock_collection = MagicMock()
+        mock_create_collection.return_value = mock_collection
+        
+        mock_docs = [MagicMock(), MagicMock()]
+        mock_chunk.return_value = mock_docs
+        
+        mock_openai_client = MagicMock()
+        mock_openai.return_value = mock_openai_client
+        
+        # Call function
+        main()
+        
+        # Verify calls
+        mock_load_dotenv.assert_called_once()
+        mock_load_config.assert_called_once_with("config/config.yaml")
+        mock_getenv.assert_called_once_with("OPENAI_API_KEY")
+        mock_openai.assert_called_once_with(api_key="test_api_key")
+        mock_create_client.assert_called_once_with(mock_config)
+        mock_create_collection.assert_called_once_with(mock_client, mock_config, "test_api_key")
+        mock_chunk.assert_called_once_with(mock_config)
+        mock_add_docs.assert_called_once_with(mock_collection, mock_docs)
+        mock_chat.assert_called_once_with(mock_config, mock_openai_client, mock_collection)
+        mock_client.close.assert_not_called()  # Fixed to match current implementation

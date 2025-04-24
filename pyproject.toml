@@ -28,6 +28,7 @@ dependencies = [
     "durationpy==0.9",
     "fastapi==0.115.9",
     "filelock==3.18.0",
+    "flask-cors>=5.0.1",
     "flatbuffers==25.2.10",
     "frozenlist==1.6.0",
     "fsspec==2025.3.2",

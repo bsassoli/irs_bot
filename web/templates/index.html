@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy of Science Assistant</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Philosophy of Science Assistant</h1>
+            <p>Ask questions about the Recipes for Science textbook</p>
+        </header>
+
+        <div id="loading-indicator" class="hidden">
+            <div class="spinner"></div>
+            <p>Loading knowledge base...</p>
+        </div>
+
+        <div id="chat-container" class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+                <div class="message system">
+                    <div class="message-content">
+                        <p>Welcome to the Philosophy of Science Assistant. I can answer questions about concepts from the Recipes for Science textbook. What would you like to know?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <form id="chat-form">
+                    <input type="text" id="user-input" placeholder="Ask a question about philosophy of science..." autocomplete="off">
+                    <button type="submit" id="send-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="context-panel" class="context-panel collapsed">
+            <div class="context-header">
+                <h3>Source Context</h3>
+                <button id="toggle-context" class="toggle-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+            <div id="context-content" class="context-content"></div>
+        </div>
+
+        <div id="error-message" class="error-message hidden">
+            <p>An error occurred. Please try again later.</p>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
