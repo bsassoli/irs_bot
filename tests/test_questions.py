@@ -5,6 +5,7 @@ TEST_QUESTIONS = [
     "What was the Reber plan?What is a meta-analysis?",
     "What are the pitfalls of meta-analyses?",
     "What are Lagrange points?",
+    "What are Merton's social norms of science?",
 ]
 
 
@@ -130,4 +131,17 @@ The James Webb Space Telescope (JWST) was sent to the L2 point of the Sun-Earth 
 
 In sum, Lagrange points exemplify a powerful application of deductive modeling in science, using mathematical reasoning to solve physical problems about motion and gravitational dynamics.
 """,
+"""
+Merton’s social norms of science are outlined in Recipes for Science as a set of four informal rules that govern the behavior of scientists and support the integrity and progress of science. These norms, originally proposed by sociologist Robert Merton, aim to enhance the moral and epistemic quality of scientific communities. They are:
+
+Communism: Scientific findings and methods are considered public goods and should be shared freely. This promotes openness and collaboration in scientific inquiry.
+
+Universalism: Scientific work should be evaluated based on objective, impersonal criteria such as empirical support and coherence with existing knowledge, rather than the social or personal attributes of the scientists involved.
+
+Disinterestedness: Scientists should aim for impartiality and objectivity in their work, not personal gain. This norm encourages integrity and reduces bias.
+
+Skepticism: Scientific claims should be critically scrutinized by relevant scientific communities before being accepted. This norm ensures rigorous peer review and helps maintain the reliability of scientific knowledge​.
+
+These norms support both the ethical conduct of individual scientists and the institutional practices that enable science to function as a trustworthy source of knowledge.
+"""
 ]

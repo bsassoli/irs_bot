@@ -104,6 +104,29 @@ pytest tests/test_chunking.py
 pytest tests/test_evaluation.py
 ```
 
+### Code Coverage
+
+Run tests with coverage:
+
+```bash
+# Basic coverage
+pytest --cov=src/irs_bot tests/
+
+# Comprehensive coverage analysis with HTML reports
+./run_coverage.py
+
+# Analyze uncovered code paths
+./find_uncovered.py
+
+# Generate coverage badge
+./generate_badge.py
+```
+
+Coverage reports are generated in the `coverage_reports` directory:
+- HTML report: `coverage_reports/html/index.html`
+- Uncovered code analysis: `coverage_reports/uncovered_code.html`
+- Coverage trend chart: `coverage_reports/trend.png`
+
 ### Evaluating Chunking Strategies
 
 The test suite includes tests to evaluate different chunking strategies:
@@ -127,6 +150,20 @@ Run the full evaluation matrix:
 ```bash
 pytest tests/test_evaluation.py::TestRAGEvaluation::test_end_to_end_evaluation
 ```
+
+### Comprehensive RAG Evaluation
+
+Run a complete evaluation of different chunking strategies and prompts using the provided test questions:
+
+```bash
+./evals.py
+```
+
+This will:
+1. Test all combinations of chunking strategies and prompt styles
+2. Evaluate responses against reference answers
+3. Generate visual reports and metrics
+4. Output a comprehensive HTML report with recommendations
 
 ## Configuration
 

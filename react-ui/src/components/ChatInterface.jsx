@@ -7,7 +7,7 @@ import { Send } from 'lucide-react';
 
 export default function ChatInterface() {
   const [messages, setMessages] = useState([
-    { id: "welcome-message", text: "Welcome to the Philosophy of Science Assistant. I can answer questions about concepts from the Recipes for Science textbook. What would you like to know?", isUser: false }
+    { id: "welcome-message", text: "Ciao, sono Imre, un assistente virtuale. Al momento sto specializzandomi nel darti informazioni su 'Recipes for Science'. In cosa posso assisterti?", isUser: false }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -160,8 +160,9 @@ export default function ChatInterface() {
   return (
     <div className="flex flex-col h-[calc(100vh-2rem)] max-w-3xl mx-auto">
       <div className="flex-none py-4 px-4 border-b">
-        <h1 className="text-2xl font-bold text-center text-primary">Philosophy of Science Assistant</h1>
-        <p className="text-center text-muted-foreground">Ask questions about the Recipes for Science textbook</p>
+        <h1 className="text-2xl font-bold text-center text-primary">IMRE</h1>
+        <h2 className="text-2xl font-bold text-center text-primary">Information Management and Retrieval for Epistemology</h2>
+        <p className="text-center text-muted-foreground">Un assistente virtuale per il corso di <i>Introduzione al Ragionamento Scientifico</i></p>
       </div>
       
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
@@ -217,7 +218,7 @@ export default function ChatInterface() {
           <Input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Ask a question about philosophy of science..."
+            placeholder="Fai una domanda sul manuale..."
             disabled={isLoading || !isInitialized}
             className="flex-1"
           />

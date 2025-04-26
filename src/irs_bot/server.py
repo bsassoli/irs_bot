@@ -1,7 +1,6 @@
 import os
 from flask import Flask, request, jsonify, render_template
 from dotenv import load_dotenv
-import yaml
 import logging
 
 # Import app components

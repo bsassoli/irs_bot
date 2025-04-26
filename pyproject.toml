@@ -56,8 +56,12 @@ dependencies = [
     "langchain-core==0.3.55",
     "langchain-text-splitters==0.3.8",
     "langsmith==0.3.33",
+    "llama-index>=0.12.33",
+    "llama-index-llms-openai>=0.3.38",
+    "llama-index-vector-stores-chroma>=0.4.1",
     "markdown-it-py==3.0.0",
     "marshmallow==3.26.1",
+    "matplotlib>=3.10.1",
     "mdurl==0.1.2",
     "mmh3==5.1.0",
     "monotonic==1.6",
@@ -81,6 +85,7 @@ dependencies = [
     "orjson==3.10.16",
     "overrides==7.7.0",
     "packaging==24.2",
+    "pandas>=2.2.3",
     "posthog==3.25.0",
     "propcache==0.3.1",
     "protobuf==5.29.4",
@@ -130,4 +135,6 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pytest>=8.3.5",
+    "pytest-cov>=4.1.0",
+    "coverage>=7.2.5",
 ]

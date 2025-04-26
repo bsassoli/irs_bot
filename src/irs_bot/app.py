@@ -115,8 +115,9 @@ def add_documents_to_chromadb(collection, documents: List):
     texts = [doc.page_content for doc in documents]
     # Generate IDs for each document
     ids = [f"doc_{i}" for i in range(len(texts))]
+    
     # Create metadata for each document
-    metadatas = [{"source": getattr(doc, "metadata", {}).get("source", "unknown")} for doc in documents]
+    
     
     # Add documents to the collection
     collection.add(

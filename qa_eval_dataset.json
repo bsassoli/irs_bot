@@ -1,0 +1,54 @@
+{
+    "queries": {
+        "8e0e57b0-9aa0-4341-8b33-107bacaf4d8e": "How does the introduction of the text relate to the recent historical event of the Covid-19 pandemic, and what preventive measure is highlighted for controlling the spread of the virus mentioned?",
+        "d64afff0-a96d-42c4-8f74-838d103d54fa": "In what ways does the text suggest that science plays a role in everyday life, particularly in the context of dealing with contagious viruses?",
+        "908f5341-885a-434a-88a8-1565f895f5a1": "What are some of the symptoms that a dog infected with canine distemper might exhibit as the disease progresses?",
+        "615af7fd-b3fc-4cc9-bcd5-5b79866c8830": "Besides dogs, list at least three other animals that can be affected by canine distemper.",
+        "83387ca9-fc68-41dc-a0ba-52068e821552": "Discuss the irony presented in the context regarding dog owners' attitudes towards canine distemper vaccines compared to human vaccines. What does this reveal about their trust in expert advice?",
+        "a2b4a99a-f54c-4277-bd9e-2b15d0151047": "Analyze the reasons why dog owners might be more inclined to vaccinate their pets against canine distemper while remaining skeptical about human vaccines. What factors could contribute to this difference in perception?",
+        "a02c50b6-980e-4b23-899a-5561704619a5": "What year did the HPV vaccine first become available, and what organization recommends it as part of routine vaccinations in all countries?",
+        "84e789f0-688b-4a80-a7bb-25452935a791": "Despite the availability of the HPV vaccine, what was the global HPV vaccination rate in 2018?",
+        "43b70ce9-8683-4c4a-b035-78621a026289": "What factors contribute to the low global HPV vaccination rate, particularly in low- to middle-income nations?",
+        "735384f4-f649-4141-82de-1052913202a2": "Why might parents in high-income nations resist having their children receive the HPV vaccine?"
+    },
+    "corpus": {
+        "doc_0": "Introduction  \nSCIENCE AND YOUR EVERYDAY LIFE  \nA highly contagious and potentially fatal virus spreads through respiratory droplets but is easily preventable through a simple vaccination. Sound familiar? Since you\u2019ve gone through a pandemic\u2014one of the events in your lifetime that will make history\u2014we know what you\u2019re thinking: Covid\u201019!",
+        "doc_1": "But no, the virus we\u2019re talking about is canine distemper. This is one of the most serious diseases a dog can get. It can also affect foxes, pandas, skunks, and raccoons. Like rabies, distemper is nothing you or your furry friend want to mess with. It can lead to some gnarly symptoms, including dehydration, vomiting, difficult breathing, and odd fits of snapping or chomping. As the condition worsens, infected dogs can suffer grand mal seizures followed by death.",
+        "doc_2": "Dog owners find the idea of canine distemper distressing. Most want effective prevention and treatment for their pets and, if they hear of canine distemper, follow expert veterinary advice. What\u2019s tragically ironic is that some of the same dog owners who do not hesitate to vaccinate their puppies against distemper are skeptical towards vaccines for humans, discounting the advice of medical experts.",
+        "doc_3": "Human papilloma virus (HPV) is widespread worldwide; it is one of the world\u2019s most frequently sexually transmitted diseases. Among other effects, HPV substantially increases the risk of various forms of cancer. Thankfully, there\u2019s a vaccine for HPV. The vaccine first became available in 2006, after thorough testing for safety and efficacy. The World Health Organization (WHO) recommends HPV vaccines as part of routine vaccinations in all countries. And yet, the global HPV vaccination rate in 2018 was",
+        "doc_4": "yet, the global HPV vaccination rate in 2018 was estimated to be only 12.2%. This low rate is a combination of limited availability and affordability in low\u2010 to middle\u2010income nations and parents\u2019 resistance to their children receiving the HPV vaccine, especially in high\u2010income nations."
+    },
+    "relevant_docs": {
+        "8e0e57b0-9aa0-4341-8b33-107bacaf4d8e": [
+            "doc_0"
+        ],
+        "d64afff0-a96d-42c4-8f74-838d103d54fa": [
+            "doc_0"
+        ],
+        "908f5341-885a-434a-88a8-1565f895f5a1": [
+            "doc_1"
+        ],
+        "615af7fd-b3fc-4cc9-bcd5-5b79866c8830": [
+            "doc_1"
+        ],
+        "83387ca9-fc68-41dc-a0ba-52068e821552": [
+            "doc_2"
+        ],
+        "a2b4a99a-f54c-4277-bd9e-2b15d0151047": [
+            "doc_2"
+        ],
+        "a02c50b6-980e-4b23-899a-5561704619a5": [
+            "doc_3"
+        ],
+        "84e789f0-688b-4a80-a7bb-25452935a791": [
+            "doc_3"
+        ],
+        "43b70ce9-8683-4c4a-b035-78621a026289": [
+            "doc_4"
+        ],
+        "735384f4-f649-4141-82de-1052913202a2": [
+            "doc_4"
+        ]
+    },
+    "mode": "text"
+}
