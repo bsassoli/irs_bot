@@ -1,6 +1,7 @@
 import os
 import chromadb
 import chromadb.utils.embedding_functions as ef
+from tqdm import tqdm
 from llama_index.core.evaluation import generate_question_context_pairs
 from typing import List, Tuple, Dict, Any
 from chromadb.errors import NotFoundError
@@ -54,18 +55,20 @@ def test_generate_qa_pairs(num_docs: int = 5):
         temperature=config["openai"]["temperature"],
     )
     
+    
     qa_pairs = generate_question_context_pairs(
-        llm=llm,
-        nodes=nodes,  # Use all documents in your index
-        num_questions_per_chunk=2,  # Adjust based on your needs
-)
+            llm=llm,
+            nodes=nodes,  # Use all documents in your index
+            num_questions_per_chunk=2,  # Adjust based on your needs
+    )
     # 5. Save the dataset
     qa_pairs.save_json("qa_eval_dataset.json")
+    print("QA pairs saved to qa_eval_dataset.json")
     
     return qa_pairs
 
 if __name__=="__main__":
-    
-    qa_pairs = test_generate_qa_pairs(10)
-    print(qa_pairs)
-
+    num_qas = 50
+    with tqdm(total=num_qas, desc="Generating QA pairs") as pbar:    
+        qa_pairs = test_generate_qa_pairs(25)
+    print("Generated {} QA pairs".format(num_qas))

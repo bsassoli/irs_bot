@@ -1,53 +1,233 @@
 {
     "queries": {
-        "8e0e57b0-9aa0-4341-8b33-107bacaf4d8e": "How does the introduction of the text relate to the recent historical event of the Covid-19 pandemic, and what preventive measure is highlighted for controlling the spread of the virus mentioned?",
-        "d64afff0-a96d-42c4-8f74-838d103d54fa": "In what ways does the text suggest that science plays a role in everyday life, particularly in the context of dealing with contagious viruses?",
-        "908f5341-885a-434a-88a8-1565f895f5a1": "What are some of the symptoms that a dog infected with canine distemper might exhibit as the disease progresses?",
-        "615af7fd-b3fc-4cc9-bcd5-5b79866c8830": "Besides dogs, list at least three other animals that can be affected by canine distemper.",
-        "83387ca9-fc68-41dc-a0ba-52068e821552": "Discuss the irony presented in the context regarding dog owners' attitudes towards canine distemper vaccines compared to human vaccines. What does this reveal about their trust in expert advice?",
-        "a2b4a99a-f54c-4277-bd9e-2b15d0151047": "Analyze the reasons why dog owners might be more inclined to vaccinate their pets against canine distemper while remaining skeptical about human vaccines. What factors could contribute to this difference in perception?",
-        "a02c50b6-980e-4b23-899a-5561704619a5": "What year did the HPV vaccine first become available, and what organization recommends it as part of routine vaccinations in all countries?",
-        "84e789f0-688b-4a80-a7bb-25452935a791": "Despite the availability of the HPV vaccine, what was the global HPV vaccination rate in 2018?",
-        "43b70ce9-8683-4c4a-b035-78621a026289": "What factors contribute to the low global HPV vaccination rate, particularly in low- to middle-income nations?",
-        "735384f4-f649-4141-82de-1052913202a2": "Why might parents in high-income nations resist having their children receive the HPV vaccine?"
+        "fb1b1bce-90e6-41f6-b96c-aa92d718decb": "What is a key method of prevention for the highly contagious virus mentioned in the introduction, and how does it relate to recent historical events?",
+        "4905099b-9cc4-4e04-8835-7eba07e7d1df": "How does the introduction draw a parallel between the described virus and a significant event in recent history?",
+        "524358db-f58a-47d5-bca8-e597345cb705": "What are some of the symptoms that a dog infected with canine distemper might exhibit as the disease progresses?",
+        "a3a5a256-bab2-44dd-85fc-b94cc3248341": "Besides dogs, name at least two other animals that can be affected by canine distemper.",
+        "7f2bd198-f526-4592-a7f5-dc908fb5ea79": "Discuss the irony presented in the context regarding the attitudes of some dog owners towards vaccines for their pets compared to vaccines for humans.",
+        "68e28cf3-87c3-48ba-b76f-1cfadb0b447c": "Explain the role of expert advice in influencing dog owners' decisions about vaccinating their puppies against canine distemper.",
+        "b952e35f-dd78-4e6c-815c-14c0f8ecd32d": "What are some of the significant health risks associated with the human papilloma virus (HPV), and how does the availability of a vaccine help mitigate these risks?",
+        "38ea2131-42bb-4e57-81e2-ce58412c1c03": "When did the HPV vaccine first become available, and what organization recommends its inclusion in routine vaccinations worldwide?",
+        "4faf53d2-4299-4c19-b517-ceef19c5b6ed": "What factors contribute to the low global HPV vaccination rate, as estimated in 2018?",
+        "b4ea2b05-32f0-4977-b590-fa419d24ec23": "How do the challenges of HPV vaccine availability and affordability differ between low- to middle-income nations and high-income nations?",
+        "619dae2d-2299-4df9-9fba-9e80ba8d56d4": "Discuss the challenges individuals face in making informed decisions about vaccinations for themselves, their children, and their pets, as mentioned in the provided context.",
+        "1c85e9c3-d05d-4ac9-81e7-e9a4d100d60f": "Explain the impact of vaccine skeptics on public perception of vaccine safety, effectiveness, and necessity, according to the context information.",
+        "541989a1-0309-4b4b-a3cc-10f9b630df82": "Explain how a sound understanding of medical research can contribute to the trustworthiness of scientific studies on vaccines.",
+        "b72e86d8-ff3e-44e9-833c-96d0348befb7": "Discuss the factors that make scientific research, particularly in the field of vaccines, trustworthy.",
+        "edde5af9-9983-4c77-9b2f-85aed9899153": "What are some common side effects associated with vaccines, and how do they compare to the occurrence of serious side effects for approved vaccines?",
+        "5b2d8bcc-ccc0-433c-954c-6b27e2a6f261": "How have claims made by vaccine skeptics regarding the risks of vaccinations been addressed according to the provided context?",
+        "dd16a267-333e-4a02-886f-fe76c10c975c": "Explain how the methods and reasoning processes used in science contribute to its credibility and trustworthiness as a source of knowledge.",
+        "230c44a9-d14c-4eff-bb7e-2988fa098cd7": "Discuss the role of scientific institutions in endorsing the methods and reasoning processes that lead to the establishment of trustworthy scientific knowledge.",
+        "bd86f32e-c7d9-46eb-af50-04fb138f39d3": "How does the process of scientific research contribute to the development of trustworthy knowledge?",
+        "492c6647-645b-40e6-9691-36746d46888d": "In what ways can being prepared to evaluate specific reports of scientific research findings be beneficial to a student or researcher?",
+        "ed57db44-5c62-4f76-863c-b5faf97d45cf": "How does understanding scientific reasoning empower individuals to make informed decisions about their health and lifestyle?",
+        "5b2cd332-e79f-479f-8f9b-9d1500a89208": "In what ways has science influenced major global issues such as the Covid-19 pandemic, the rise of AI, and climate change policy?",
+        "b8dc4fbf-9826-468e-bacd-05308a02eecd": "How does critically evaluating the credentials of experts help in deciding what to believe in scientific reports?",
+        "2956daab-0d9f-48dc-9e47-4ffbb42d1fa7": "Why is it important to understand not just what to believe in scientific findings, but also why to believe it?",
+        "8b7ddf2f-204f-4061-9a92-0592b5594c6f": "Discuss the potential implications of private corporations funding scientific research. What are some concerns that might arise, and how could they impact the scientific enterprise and its relationship with society?",
+        "8e8c5379-fca9-44f6-953e-7706e0ff574d": "Evaluate the current level of public funding for scientific research. In your opinion, is it sufficient to address important scientific topics, and are there areas that you believe are not adequately targeted? Provide reasoning for your assessment.",
+        "09c20090-70a4-4d15-8379-7a6a5b430186": "Discuss the significance of funding sources in research and analyze how they can impact the outcomes of a study.",
+        "cbe1d5e6-a2d3-4cc0-86bb-b98b65720723": "Evaluate the different ways in which funding sources might influence the direction and focus of a research project.",
+        "02646411-883e-4920-b6fc-e996035a5c63": "What are the primary disciplines that investigate the nature of science and its relationship with society, as mentioned in the context?",
+        "7e458ea2-da6c-4d7d-9cf5-bd0f6222180e": "How do researchers, other than scientists, contribute to our understanding of science and its workings according to the context provided?",
+        "920f487f-83d4-4a39-903d-718faa1c0404": "How have sociologists contributed to the understanding of science according to the context provided?",
+        "91f1af75-628e-423f-91f5-2bff69bb247a": "What is the primary approach taken by the authors of the book mentioned in the context, and why have they chosen this approach?",
+        "0e9c39a8-aacc-40a0-967f-fae678197202": "What is the primary focus of the philosophy of science, and why is it considered important in understanding the role of science in society?",
+        "84ba99bb-d0d8-47b6-a0b3-d2a838fa181c": "How does the book mentioned in the context approach the subject of philosophy of science differently from traditional philosophical texts?",
+        "4a2f9d53-7880-404e-9794-4c822097549c": "How can combining insights from philosophy with concrete examples help in understanding the aims and methods of science without delving into controversies or technical details?",
+        "a09fb04d-d236-4db3-9af5-d0f82f8e4d9a": "What role do patterns of reasoning play in illuminating the objectives and methodologies of science, and how can they be effectively communicated without overwhelming students with too many details?",
+        "037977eb-9e87-4adb-8e52-244af416586b": "How does the book \"Recipes for Science\" draw a parallel between culinary recipes and scientific research in terms of variation and implementation?",
+        "885d91c5-2be2-47c5-a559-64971e76258e": "In what ways does the title \"Recipes for Science\" suggest that scientific research can have diverse aims and methods, similar to culinary recipes?",
+        "f00f614e-545f-49db-84b2-6fa2627799b0": "What are some methods that can be used to achieve various aims as suggested in the context information?",
+        "3985a8a7-a07a-4697-a3cc-35d4c4671139": "How does the use of different methods contribute to the achievement of aims according to the context provided?",
+        "d178cb21-ba61-41b3-b07c-0a76844bb500": "Based on the context provided, what are some common elements that different bread recipes tend to share, even if their features vary?",
+        "72b40cf9-be1a-43c3-9980-c66f70be0c9e": "Explain how culinary recipes use intentional combinations of ingredients and methods to achieve a specific outcome, using the example of bread.",
+        "165edac3-bb06-4a07-90f7-068ef80a2a22": "How is the process of making bread used as an analogy to describe the nature of conducting good science, according to the provided context?",
+        "71493a9f-8970-49ea-8f47-a6f4008ba474": "What are some similarities between the diversity of bread recipes and the methods used in scientific research, as mentioned in the context?",
+        "9035b5e8-4831-418e-b0e5-e5b7e1351859": "How does the analogy of bread recipes help in understanding the variations and common themes present in scientific methods and results?",
+        "c9497705-da83-4201-9a03-127c9f94d2de": "What is the primary aim of the book mentioned in the context, and how does it intend to achieve this aim with respect to the understanding of science?",
+        "205df2c3-20cf-4505-84e3-f70a3785dcd1": "Based on Chapter 1, what are some distinctive features of science's aims, methods, and institutional structure that can be used to differentiate it from non-science and fake science?",
+        "97f8f118-089f-4b83-ae57-0ef222fd37d9": "How does Chapter 2 describe the influence of values on science, and in what ways do the aims and methods of science vary while maintaining certain commonalities?",
+        "a408c25d-f2de-4294-bb7e-877ed6c52ca1": "Describe the different roles that experimentation plays in the scientific process as discussed in Chapter 3. How do these roles contribute to scientific understanding?",
+        "3fb75c9c-c322-407e-af1d-bb57577f67ec": "Compare and contrast the advantages and disadvantages of non-experimental studies as outlined in Chapter 4. Provide examples of situations where non-experimental studies might be preferred over experimental ones."
     },
     "corpus": {
         "doc_0": "Introduction  \nSCIENCE AND YOUR EVERYDAY LIFE  \nA highly contagious and potentially fatal virus spreads through respiratory droplets but is easily preventable through a simple vaccination. Sound familiar? Since you\u2019ve gone through a pandemic\u2014one of the events in your lifetime that will make history\u2014we know what you\u2019re thinking: Covid\u201019!",
         "doc_1": "But no, the virus we\u2019re talking about is canine distemper. This is one of the most serious diseases a dog can get. It can also affect foxes, pandas, skunks, and raccoons. Like rabies, distemper is nothing you or your furry friend want to mess with. It can lead to some gnarly symptoms, including dehydration, vomiting, difficult breathing, and odd fits of snapping or chomping. As the condition worsens, infected dogs can suffer grand mal seizures followed by death.",
         "doc_2": "Dog owners find the idea of canine distemper distressing. Most want effective prevention and treatment for their pets and, if they hear of canine distemper, follow expert veterinary advice. What\u2019s tragically ironic is that some of the same dog owners who do not hesitate to vaccinate their puppies against distemper are skeptical towards vaccines for humans, discounting the advice of medical experts.",
         "doc_3": "Human papilloma virus (HPV) is widespread worldwide; it is one of the world\u2019s most frequently sexually transmitted diseases. Among other effects, HPV substantially increases the risk of various forms of cancer. Thankfully, there\u2019s a vaccine for HPV. The vaccine first became available in 2006, after thorough testing for safety and efficacy. The World Health Organization (WHO) recommends HPV vaccines as part of routine vaccinations in all countries. And yet, the global HPV vaccination rate in 2018 was",
-        "doc_4": "yet, the global HPV vaccination rate in 2018 was estimated to be only 12.2%. This low rate is a combination of limited availability and affordability in low\u2010 to middle\u2010income nations and parents\u2019 resistance to their children receiving the HPV vaccine, especially in high\u2010income nations."
+        "doc_4": "yet, the global HPV vaccination rate in 2018 was estimated to be only 12.2%. This low rate is a combination of limited availability and affordability in low\u2010 to middle\u2010income nations and parents\u2019 resistance to their children receiving the HPV vaccine, especially in high\u2010income nations.",
+        "doc_5": "At some point in their lives, most people will need to decide about whether to be vaccinated for some disease, whether to have their children undergo routine vaccinations, and even whether to have their dog vaccinated. And, when it comes to vaccines for humans, sometimes vaccine skeptics have louder voices than doctors and other experts. So, it can be difficult to get a clear understanding of vaccines\u2019 safety, effectiveness, and necessity for public health. What can help is a sound understanding of the",
+        "doc_6": "What can help is a sound understanding of the medical research about vaccines and a deeper understanding of what makes this and other scientific research trustworthy.",
+        "doc_7": "All vaccines approved for use in humans or animals have undergone thorough testing for safety and efficacy. Most vaccines do have potential side effects, such as achiness for a day or two, but serious side effects for any approved vaccine are very rare. And vaccine skeptics\u2019 claims about substantive risks of vaccinations have been thoroughly debunked.",
+        "doc_8": "But you don\u2019t need to just take our word for it, or the word of any individual scientist. Science\u2019s credibility and its trustworthiness as a source of knowledge result from its methods and reasoning processes and how these are carried out by scientists and endorsed by scientific institutions. This is what makes established scientific knowledge trustworthy. Learning more about these methods and reasoning processes can give you a sense for why scientific research results in trustworthy knowledge, and it can",
+        "doc_9": "results in trustworthy knowledge, and it can also prepare you to evaluate specific reports of scientific research findings.",
+        "doc_10": "Understanding how science works is important because scientific findings, and the public\u2019s reactions to them, dramatically shape our world. Science regularly influences your life, whether you are looking for it to or not. Consider the Covid-19 pandemic, the internet and the rise of AI, and climate change policy. The ability to understand and assess scientific reasoning enables you to make educated decisions related to your health, medical care, lifestyle, and more. It also enables you to critically",
+        "doc_11": "and more. It also enables you to critically evaluate reports of scientific findings and the credentials of experts in order to decide not just what to believe, but\u2014more importantly\u2014why.",
+        "doc_12": "Someone with a sophisticated understanding of science is also well positioned to make judgments about science more globally. Is the level of public funding for scientific research sufficient? Should we worry if private corporations fund science? Are there important topics that aren\u2019t yet adequately targeted in scientific research? Answers to these questions require thinking about the status of the scientific enterprise as a whole, how it should relate to society, and whether and how funding sources matter.",
+        "doc_13": "and whether and how funding sources matter.",
+        "doc_14": "Scientists are, of course, the main practitioners of science. Other researchers have as their primary focus understanding what science\u2014and scientists\u2014are up to. These researchers investigate what science is and how it works, its challenges and limitations, and its relationship with society. These topics are what this book is all about. Several disciplines investigate science in this way; primary among these are history, sociology, and philosophy. Historians of science research how science has changed over",
+        "doc_15": "of science research how science has changed over time. Sociologists research social and cultural influences on science. This book draws from the history and sociology of science, but its main approach is philosophical. This is because we, its authors, are philosophers of science.",
+        "doc_16": "If you haven\u2019t studied philosophy of science, it may sound obscure. But philosophy of science is just the investigation of science, focused especially on questions of what science should be like in order to be a trustworthy route to knowledge and to achieve the other ends we want it to have, such as usefulness to society. This book is written from a philosophical perspective, but it does not dwell on philosophers\u2019 different theories and debates about science. Instead, we aim to combine insights about",
+        "doc_17": "Instead, we aim to combine insights about science from philosophy with concrete examples to illuminate science\u2019s aims, methods, and patterns of reasoning, without getting bogged down in controversies, technical terminology, or too many details.",
+        "doc_18": "The title of this book, Recipes for Science, is meant to evoke two ideas. First, culinary recipes have many variations: in what dish they are used to create, which version of the dish, and details of implementation. Different recipes are used to make bread and lasagna, bread recipes may call for leavening with yeast or baking soda, and ingredient measurements may be in weight or volume. Science is also like this. Scientific research can have many different aims and proceed using a variety of different",
+        "doc_19": "aims and proceed using a variety of different methods.",
+        "doc_20": "On the other hand, any culinary recipe employs intentional combinations of ingredients using time-tested methods to lead to a specific outcome. And different recipes for one type of food tend to have some elements in common, even if many of their features vary. So, for example, breads usually incorporate grain of some kind as a major ingredient, most use a leavening agent, and they are cooked\u2014usually but not always by baking in the oven. There are resemblances among different breads and the recipes used to",
+        "doc_21": "among different breads and the recipes used to make them, even if there\u2019s no simple definition of bread and no one recipe required to make bread. Science is like this as well. Even as it proceeds in different ways, and even as there\u2019s no one overarching set of instructions or mechanical procedures that guarantees good science, there are certain generalizations that can be made about how good science is conducted.",
+        "doc_22": "Recipes for bread have many variations, but both the recipes and the resulting breads tend to have some features in common with one another. Scientific methods are like this: endless variation but with themes in both methods and results.  \nThis book aims to facilitate a clear understanding of the main elements of science, and the importance of those elements, even as it illustrates the tremendous variety of projects that count as science.",
+        "doc_23": "The first part of the book, Chapters 1 \u2013 5, addresses the nature of science and its key methods.  \nChapter 1 surveys what is distinctive about science\u2019s aims, methods, and institutional structure and suggests those features as a checklist for distinguishing science from non-science and fake science.  \nChapter 2 introduces how science is shaped by values, varies in its aims, and consists in a variety of recipes with a few commonalities.",
+        "doc_24": "Chapter 3 examines the nature of scientific experiments and the roles experimentation plays in science.  \nChapter 4 catalogues varieties of non-experimental studies and discuss their advantages and disadvantages.  \nChapter 5 focuses on scientific models: how they are constructed and used, and the main varieties in which they come.  \nThe second part of the book, Chapters 6 \u2013 10, focuses on important patterns of reasoning in science."
     },
     "relevant_docs": {
-        "8e0e57b0-9aa0-4341-8b33-107bacaf4d8e": [
+        "fb1b1bce-90e6-41f6-b96c-aa92d718decb": [
             "doc_0"
         ],
-        "d64afff0-a96d-42c4-8f74-838d103d54fa": [
+        "4905099b-9cc4-4e04-8835-7eba07e7d1df": [
             "doc_0"
         ],
-        "908f5341-885a-434a-88a8-1565f895f5a1": [
+        "524358db-f58a-47d5-bca8-e597345cb705": [
             "doc_1"
         ],
-        "615af7fd-b3fc-4cc9-bcd5-5b79866c8830": [
+        "a3a5a256-bab2-44dd-85fc-b94cc3248341": [
             "doc_1"
         ],
-        "83387ca9-fc68-41dc-a0ba-52068e821552": [
+        "7f2bd198-f526-4592-a7f5-dc908fb5ea79": [
             "doc_2"
         ],
-        "a2b4a99a-f54c-4277-bd9e-2b15d0151047": [
+        "68e28cf3-87c3-48ba-b76f-1cfadb0b447c": [
             "doc_2"
         ],
-        "a02c50b6-980e-4b23-899a-5561704619a5": [
+        "b952e35f-dd78-4e6c-815c-14c0f8ecd32d": [
             "doc_3"
         ],
-        "84e789f0-688b-4a80-a7bb-25452935a791": [
+        "38ea2131-42bb-4e57-81e2-ce58412c1c03": [
             "doc_3"
         ],
-        "43b70ce9-8683-4c4a-b035-78621a026289": [
+        "4faf53d2-4299-4c19-b517-ceef19c5b6ed": [
             "doc_4"
         ],
-        "735384f4-f649-4141-82de-1052913202a2": [
+        "b4ea2b05-32f0-4977-b590-fa419d24ec23": [
             "doc_4"
+        ],
+        "619dae2d-2299-4df9-9fba-9e80ba8d56d4": [
+            "doc_5"
+        ],
+        "1c85e9c3-d05d-4ac9-81e7-e9a4d100d60f": [
+            "doc_5"
+        ],
+        "541989a1-0309-4b4b-a3cc-10f9b630df82": [
+            "doc_6"
+        ],
+        "b72e86d8-ff3e-44e9-833c-96d0348befb7": [
+            "doc_6"
+        ],
+        "edde5af9-9983-4c77-9b2f-85aed9899153": [
+            "doc_7"
+        ],
+        "5b2d8bcc-ccc0-433c-954c-6b27e2a6f261": [
+            "doc_7"
+        ],
+        "dd16a267-333e-4a02-886f-fe76c10c975c": [
+            "doc_8"
+        ],
+        "230c44a9-d14c-4eff-bb7e-2988fa098cd7": [
+            "doc_8"
+        ],
+        "bd86f32e-c7d9-46eb-af50-04fb138f39d3": [
+            "doc_9"
+        ],
+        "492c6647-645b-40e6-9691-36746d46888d": [
+            "doc_9"
+        ],
+        "ed57db44-5c62-4f76-863c-b5faf97d45cf": [
+            "doc_10"
+        ],
+        "5b2cd332-e79f-479f-8f9b-9d1500a89208": [
+            "doc_10"
+        ],
+        "b8dc4fbf-9826-468e-bacd-05308a02eecd": [
+            "doc_11"
+        ],
+        "2956daab-0d9f-48dc-9e47-4ffbb42d1fa7": [
+            "doc_11"
+        ],
+        "8b7ddf2f-204f-4061-9a92-0592b5594c6f": [
+            "doc_12"
+        ],
+        "8e8c5379-fca9-44f6-953e-7706e0ff574d": [
+            "doc_12"
+        ],
+        "09c20090-70a4-4d15-8379-7a6a5b430186": [
+            "doc_13"
+        ],
+        "cbe1d5e6-a2d3-4cc0-86bb-b98b65720723": [
+            "doc_13"
+        ],
+        "02646411-883e-4920-b6fc-e996035a5c63": [
+            "doc_14"
+        ],
+        "7e458ea2-da6c-4d7d-9cf5-bd0f6222180e": [
+            "doc_14"
+        ],
+        "920f487f-83d4-4a39-903d-718faa1c0404": [
+            "doc_15"
+        ],
+        "91f1af75-628e-423f-91f5-2bff69bb247a": [
+            "doc_15"
+        ],
+        "0e9c39a8-aacc-40a0-967f-fae678197202": [
+            "doc_16"
+        ],
+        "84ba99bb-d0d8-47b6-a0b3-d2a838fa181c": [
+            "doc_16"
+        ],
+        "4a2f9d53-7880-404e-9794-4c822097549c": [
+            "doc_17"
+        ],
+        "a09fb04d-d236-4db3-9af5-d0f82f8e4d9a": [
+            "doc_17"
+        ],
+        "037977eb-9e87-4adb-8e52-244af416586b": [
+            "doc_18"
+        ],
+        "885d91c5-2be2-47c5-a559-64971e76258e": [
+            "doc_18"
+        ],
+        "f00f614e-545f-49db-84b2-6fa2627799b0": [
+            "doc_19"
+        ],
+        "3985a8a7-a07a-4697-a3cc-35d4c4671139": [
+            "doc_19"
+        ],
+        "d178cb21-ba61-41b3-b07c-0a76844bb500": [
+            "doc_20"
+        ],
+        "72b40cf9-be1a-43c3-9980-c66f70be0c9e": [
+            "doc_20"
+        ],
+        "165edac3-bb06-4a07-90f7-068ef80a2a22": [
+            "doc_21"
+        ],
+        "71493a9f-8970-49ea-8f47-a6f4008ba474": [
+            "doc_21"
+        ],
+        "9035b5e8-4831-418e-b0e5-e5b7e1351859": [
+            "doc_22"
+        ],
+        "c9497705-da83-4201-9a03-127c9f94d2de": [
+            "doc_22"
+        ],
+        "205df2c3-20cf-4505-84e3-f70a3785dcd1": [
+            "doc_23"
+        ],
+        "97f8f118-089f-4b83-ae57-0ef222fd37d9": [
+            "doc_23"
+        ],
+        "a408c25d-f2de-4294-bb7e-877ed6c52ca1": [
+            "doc_24"
+        ],
+        "3fb75c9c-c322-407e-af1d-bb57577f67ec": [
+            "doc_24"
         ]
     },
     "mode": "text"

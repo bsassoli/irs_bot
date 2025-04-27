@@ -2,8 +2,9 @@ TEST_QUESTIONS = [
     "Who was Keeling and what is his relevance?",
     "What is the observer-expectancy effect?"
     "What is the role of thought experiments in scientific reasoning?",
-    "What was the Reber plan?What is a meta-analysis?",
-    "What are the pitfalls of meta-analyses?",
+    "What was the Reber plan?",
+    "What is a meta-analysis?",
+    "What are some of the pitfalls of meta-analyses?",
     "What are Lagrange points?",
     "What are Merton's social norms of science?",
 ]

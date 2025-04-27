@@ -12,8 +12,8 @@ chromadb:
 # Document processing configuration
 document_processing:
   path_to_doc: "data/complete_text.md"
-  chunk_size: 512
-  chunk_overlap: 50
+  chunk_size: 256
+  chunk_overlap: 16
   headers_to_split_on:
     - ["##", "Header 2"]
     - ["###", "Header 3"]
