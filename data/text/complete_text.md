@@ -32,10 +32,6 @@ The title of this book, *Recipes for Science*, is meant to evoke two ideas. Firs
 
 On the other hand, any culinary recipe employs intentional combinations of ingredients using time-tested methods to lead to a specific outcome. And different recipes for one type of food tend to have some elements in common, even if many of their features vary. So, for example, breads usually incorporate grain of some kind as a major ingredient, most use a leavening agent, and they are cooked—usually but not always by baking in the oven. There are resemblances among different breads and the recipes used to make them, even if there’s no simple definition of bread and no one recipe required to make bread. Science is like this as well. Even as it proceeds in different ways, and even as there’s no one overarching set of instructions or mechanical procedures that guarantees good science, there are certain generalizations that can be made about how good science is conducted.
 
-
-
- 
-
 Recipes for bread have many variations, but both the recipes and the resulting breads tend to have some features in common with one another. Scientific methods are like this: endless variation but with themes in both methods and results.
 
 This book aims to facilitate a clear understanding of the main elements of science, and the importance of those elements, even as it illustrates the tremendous variety of projects that count as science.
@@ -3448,13 +3444,11 @@ The upshot of this section is that, even as statistical information is highly va
 
 ##### FURTHER READINGS
 
-For a comprehensive history of statistics and statisticians, see Stigler, S. M. (2002). *Statistics on the table: The history of statistical concepts and methods*. Harvard University Press.
+For a comprehensive history of statistics and statisticians, see Stigler, S. M. (2002). *Statistics on the table: The history of statistical concepts and methods*. Harvard University Press.  .   .
 
 For more on the nature of averages and the normal distribution, see Stigler, S. M. (1997). Regression towards the mean, historically considered. *Statistical Methods in Medical Research, 6(2), 103–114; Lyon, A. (2014). Why are normal distributions normal? The British Journal for the Philosophy of Science, 65(3), 621–649; and Røislien, J., & Frøslie, K. F. (2019). Jane and John do not exist. Tidsskrift for Den norske legeforening*. https://doi.org/10.4045/tidsskr.18.0824
 
 For a focused discussion of how to understand correlations and what can be learned from them, see Anjum, R. L., & Mumford, S. (2018). What’s in a correlation? In R. L. Anjum & S. Mumford (Eds.), *Causation in science and the methods of scientific discovery* (ch. 4, pp. 29–36). Oxford University Press. https://doi.org/10.1093/oso/9780198733669.003.0004
 
 For a comprehensive survey of sloppiness, bias, hype, fraud in statistical—and more generally, scientific—practices, see Ritchie, S. (2020). *Science fictions: Exposing fraud, bias, negligence and hype in science*. Random House.
-
-
 
