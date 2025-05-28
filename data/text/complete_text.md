@@ -3452,3 +3452,452 @@ For a focused discussion of how to understand correlations and what can be learn
 
 For a comprehensive survey of sloppiness, bias, hype, fraud in statistical—and more generally, scientific—practices, see Ritchie, S. (2020). *Science fictions: Exposing fraud, bias, negligence and hype in science*. Random House.
 
+## CHAPTER 10 - Statistical inference
+
+###  10.1 THE HIGGS BOSON AND DRAWING INFERENCES WITH STATISTICS
+
+After reading this section, you should be able to:
+
+- Identify three roles of statistical inference and illustrate them with examples
+- Describe how probability theory extends the reach of statistics
+- Distinguish frequency distribution from probability distribution
+
+#### From a “bump” in data to a new fundamental particle
+
+In 2012, scientists at CERN (European Center for Nuclear Research) in Geneva, Switzerland, announced the discovery of a new boson, a very tiny particle whose existence is crucial to our understanding of the fundamental structure of matter. Using CERN’s Large Hadron Collider (LHC), a 27‐kilometer (17‐mile) tunnel straddling the Swiss‐French border, scientists had been repeatedly observing the outcome of collisions among protons (one kind of particle in the nucleus of atoms). These collisions produce a shower of new particles, most of which are unstable and decay into other particles in a tiny fraction of a second.
+
+New particles formed in proton‐proton collisions in the LHC can be identified by tracking their trajectory, energy, and momentum. Detecting their mass is particularly relevant to distinguishing between different types of particles. However, because sub‐atomic particles are so small, it’s a challenge to distinguish the signature properties of new particles from background events.
+
+In the summer of 2012, scientists recorded a “bump” in their data, corresponding to a particle with a mass between 125 and 127 GeV/c2 (one gigaelectronvolt, or 1.783 × 10−27 kg). This is about 133 times heavier than protons. It was thought that this recorded bump could provide evidence of a new particle—perhaps of the long‐sought Higgs boson. Using methods for statistical inference, the scientists calculated that this bump emerging from background events in the collider would occur by chance, without the presence of a boson, only once in three million trials. Because this probability was so low, the scientists rejected the idea that the bump occurred purely by chance and concluded it had been caused by a Higgs boson. 
+
+Scientists all over the world were thrilled with this news. The discovery of the Higgs boson could lend additional support to the standard model of particle physics, which is scientists’ current best theory of the most basic forces and building blocks of the universe. The hypothesized Higgs boson was supposed to be like the glue of the universe: it’s what joins everything together and gives it mass. It seemed this hypothesis now had been tested and confirmed.
+
+The groundbreaking discovery of the Higgs boson illustrates how fundamental statistical inference is to scientific findings. Very often, techniques of inferential statistics are required to know what conclusions are supported by the empirical evidence.
+
+#### From description to inference
+
+Descriptive uses of statistics enable scientists to summarize and represent data sets in meaningful ways. In Chapter 9, we saw how to do this visually with charts and graphs and also numerically with means, standard deviations, and correlation coefficients. However, merely describing data sets regularly falls short of what scientists and everyone else are interested in. We are also interested in generalizing, making predictions, and testing hypotheses based on data sets.
+
+Data collected in pre-election polls are used not merely to describe one group of voters but to make predictions about the eventual outcome of the elections. Basketball fans want to predict, from his past record, whether LeBron James’s free-throw success will improve over time. Health researchers want to test, from observed treatment effects in a medical trial, whether a medical drug is efficacious against a certain ailment in the general population. For these kinds of interests—predicting the future, generalizing from a sample, and testing hypotheses—we need inferential statistics.
+
+Inferential statistics is an important form of inductive reasoning that extends the reach of descriptive statistics with the use of probability theory. Coin tosses, dice throws, LeBron’s free throws, people’s voting intentions, effects of medical drugs, and more can all be treated as random variables. Inferential statistics can be used to analyze data sets to predict yet-to-be-measured values of those variables. For example, one might infer from a sequence of heads and tails whether the coin is unfair, predict from his past record whether LeBron’s free-throw success will improve over time, predict from an opinion poll which candidate will win the election, and infer from observed treatment effects to the efficacy of a medical drug.
+
+Probability theory, introduced in Chapter 8, is used to expand statistical tools from description to inference. The basic idea is that observed frequencies are used to estimate probabilities.
+
+A frequency distribution is how often a variable takes on each value in some data set. This might be depicted in a table or histogram, for instance. A relative frequency distribution records the proportion of occurrences for each value instead of the absolute number. For example, suppose you have a bag containing 35 M&Ms of different colors: M&M Color = {brown, red, yellow, green, blue, orange}. The second column of Table 10.1 depicts the frequency distribution of each color, and the third and fourth columns of Table 10.1 depict the relative frequency distribution—in terms of proportion in column 3 and in terms of percentage in column 4. Each of columns second, third, and fourth is a way to display the proportions of the colors in your particular bag of 35 M&Ms.
+
+##### Table 10.1
+
+Frequency Distribution of Bag of 35 M&Ms (second column); Relative Frequency Distribution (third and fourth columns)
+
+| Color  | Frequency | Proportion | Percentage |
+| ------ | --------- | ---------- | ---------- |
+| Blue   | 1         | 1/35       | 2.86%      |
+| Orange | 3         | 3/35       | 8.57%      |
+| Yellow | 4         | 4/35       | 11.43%     |
+| Red    | 5         | 5/35       | 14.29%     |
+| Green  | 5         | 5/35       | 14.29%     |
+| Brown  | 17        | 17/35      | 48.57%     |
+
+---
+
+Relative frequency distributions can be used to estimate the probability distribution for a variable—that is, how often the variable is expected to take on each of a range of values. In this example, this isn’t a description of your bag of M&Ms, but a prediction about other bags. Some bags will have a distribution of colors similar to yours; others will vary more. Based on your sample bag of M&Ms, you may estimate that if you take a random bag of M&Ms, open it, and choose an M&M at random from that bag, the probability of getting a blue M&M is about 3%.
+
+Let’s consider a very simple probability distribution to illustrate how probability distributions support statistical inference: the probability distribution of the number of times heads are expected to come up over 100 coin tosses. The range of possible outcomes is 0 to 100: heads might come up as few as zero times and up to a maximum of 100 times. In other words, these are the possible values of the variable Heads per 100 coin tosses.
+
+In theory, we could calculate the probability of each outcome in that range using probability theory developed in Chapter 8. Notice that Pr(heads = 0) is equivalent to Pr(tails and tails and . . . tails). If every coin toss comes up tails, then there are zero instances of heads. What is the probability of that ever happening, assuming the coin is fair? The probability of getting tails on a throw is always .5, and we multiply probabilities to calculate the probability of multiple independent events all occurring. The probability of getting 100 tails would be a really, really tiny number: 1/2 × 1/2 × . . . × 1/2, or 1/2100. Notice that it’s also the same as the probability that heads comes up 100 times.
+
+In between 0 and 100, the calculation for the probability of every value of number of times heads comes up is much more complicated, though in principle we know enough probability theory to do these calculations. We won’t carry out the calculations, but considering how they would go gives us a sense for how the probability changes for intermediate numbers of heads.
+
+Notice that there is only one way to get zero heads and only one way to get 100 heads: for one, the coin never lands heads, and, for the other, the coin lands heads all 100 times. Now consider getting exactly one head out of 100 tosses. There are 100 different ways that could happen! It might be the first toss, or the second toss, or the third toss, or the 37th, or any other single toss. So, Pr(heads=1) is equivalent to Pr[(heads and tails and tails and . . . tails) or (tails and heads and tails and . . . tails) or . . .] and so on, up until the circumstance of getting heads only on the 100th toss.
+
+Using our previous calculation, and because we add when calculating the probability of one of several mutually exclusive events occurring, this is 1/2100 + 1/2100 + . . . + 1/2100, or 100 × 1/2100. This is still a tiny number, but it’s 100 times bigger than the probability of heads coming up no times or every time. The same calculation gives us the probability that heads comes up 99 times; so we’re building our probability distribution from both ends at the same time.
+
+There are even more ways for heads to come up twice (or 98 times), and even more ways than that for heads to come up three times (or 97 times). Each time we add another outcome of heads the calculation becomes more complicated, and the probability of getting that number of heads increases. The increasing probability of each of these outcomes isn’t linear; the increase gets bigger each time.
+
+#### Statistical inference
+
+The probability distribution will be symmetric, since the calculation is the same whether the number of heads = 0 or 100, whether the number of heads = 1 or 99, and so forth. The middle of the distribution, the most probable outcome, is thus 50: that you get heads on 50/100, or .5, of the coin tosses. Figure 10.2 shows a histogram of the whole probability distribution. As the number of tosses increases, the shape of the histogram becomes a bell curve. Recall from Chapter 9 that a bell curve is a perfectly symmetric, unimodal distribution for continuous variables—what is also called a normal distribution.
+
+The normal distribution—unimodal and symmetric—is especially important for statistical reasoning. Like coin tosses, the behavior of random variables over many repeated, independent trials tend to have a probability distribution that is normal. This results from what is known in statistics as the central limit theorem: the statistical claim that samples with a large enough size will have a mean approximating the mean of the population. What varies for different random variables is the central tendency and variability of the normal distribution, which—as we saw in Chapter 9—can be described with mean and standard deviation. Whereas the mean value of heads on 100 coin tosses is 50, the mean value of 6s on 100 dice rolls is 16.67 (1/6 × 100).
+
+| 0.09                          | 0.08                          | 0.07                          | 0.06                          | 0.05                          | 0.04                          | 0.03                          | 0.02                          | 0.01                          | 0                             |
+| ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- |
+| heads per 100 coin tosses (k) | heads per 100 coin tosses (k) | heads per 100 coin tosses (k) | heads per 100 coin tosses (k) | heads per 100 coin tosses (k) | heads per 100 coin tosses (k) | heads per 100 coin tosses (k) | heads per 100 coin tosses (k) | heads per 100 coin tosses (k) | heads per 100 coin tosses (k) |
+
+Probability distribution of heads for 100 coin tosses; the mean of this distribution is 50 and its standard deviation is 5.
+
+Standard deviation, but not the mean, is also influenced by the number of trials. You are more likely to get none or all heads in five coin tosses than in 100 coin tosses; the standard deviation is larger for the former.
+
+Probability distributions for fair coins and dice can be calculated directly from the probabilities of the individual outcomes, as sketched earlier for 100 coin tosses. This is not so for variables like success rate at free throws and proportion of blue M&Ms.
+
+For variables like those, the frequency distribution of a data set is used to predict the probability distribution. The predicted probability distribution can then be the basis for our expectations for other, relevantly similar data sets, like future basketball games and unopened bags of M&Ms.
+
+##### EXERCISES
+
+10.1 Recall: Describe how inferential statistics can be used to make predictions, generalize from an example, and test a hypothesis, and give an example of each.
+
+10.2 Recall: Define frequency distribution, and describe in your own words how mean and standard deviation in descriptive statistics relate to frequency distributions. Then, define probability distribution, and describe in your own words how inferential statistics makes use of probability distributions.
+
+10.3 Think: Define descriptive statistics and inferential statistics. In your own words, describe how probability theory is used to make inferential statistics possible.
+
+10.4 **Apply**: In class, or with a group of several classmates, find a coin for each person and carry out the following steps, each person recording the answers individually.
+
+1. Agree in your group about your expectation for the mean percentage of coin tosses that will land heads up; record this percentage.
+2. Each person should toss their coin four times, recording each result as either heads or tails. Summarize your individual result as the ratio of heads to tails. This will be either 0:4, 1:3, 2:2, 3:1, or 4:0.
+3. Record how many people in your group got each of the possible ratios: 0:4, 1:3, 2:2, 3:1, and 4:0. Draw a histogram showing these results.
+4. Some people didn’t get a ratio of 2:2. Why not, when you predicted 50% heads?
+5. Should we expect each person to get the same ratio of heads to tails on the next four coin tosses as they did on the first four? Why or why not?
+6. Each person should toss his or her coin four more times, recording each result and then summarizing as a new ratio of heads to tails.
+7. Add these ratios to the data set of the first round of coin tosses. There should now be twice as many series of four-coin tosses. Draw a new histogram describing the complete data set.
+8. Compare the histogram from (d) to the histogram from (g). What has changed? Why?
+
+10.5 Apply: Convert the following data about the outcomes of 11 rolls of a die to a relative frequency distribution:
+
+- 1st roll: 4
+- 2nd roll: 3
+- 3rd roll: 4
+- 4th roll: 6
+- 5th roll: 2
+- 6th roll: 1
+- 7th roll: 6
+- 8th roll: 4
+- 9th roll: 5
+- 10th roll: 5
+- 11th roll: 6
+
+Then, draw a histogram showing the relative frequency distribution for this data set.
+
+  
+
+10.6 Apply: Construct a histogram of the probability distribution for an experiment in which a die is thrown five times and the number of occurrences of 4 is recorded.
+
+### 10.2 STATISTICS IN ESTIMATION
+
+After reading this section, you should be able to:
+
+- Define sample mean and sample standard deviation and indicate how these differ from mean and standard deviation for descriptive statistics
+- Describe how inferential statistics is used to estimate population values from a sample
+- Indicate how sample size and representativeness matter for estimation
+
+#### Estimating from a sample
+
+One common application of statistical inference methods is estimating the features of a population based on data about a sample. Generalizing from a sample to a population is a very common way to learn about the features of a population, especially for populations that are very large. The population in question might be a human population, but it might be different organisms, other entities, or even events instead, such as tree frogs, nations, corporations, and election outcomes. So, statistical inference can be (and has been) used to estimate prevalence of different religions worldwide, variation in tree frog calls, and voter turnout in local versus national elections—among many other things.
+
+The basic idea of statistical estimation is to use the observed frequency distribution for a sample as the basis for estimating the probability distribution for that variable in the general population. The measures introduced in Chapter 9 of mean and standard deviation can be adapted to represent the probability distribution for the variable in the population.
+
+Imagine scientists have a sample of 100 university students, and they want to use that sample to estimate the range of political views among all students at that university. They might administer a questionnaire to the individuals in the sample, with each individual’s responses scored between 1 and 10, where 1 is most politically conservative and 10 is most politically liberal. Imagine the questionnaire scores are as shown in Table 10.2. This data set gives the scientists all the information they need to estimate.
+
+##### Table 10.2 Imagined questionnaire scores of 100 university students
+
+| Questionnaire Score | Number of Individuals |
+| ------------------- | --------------------- |
+| 1                   | 0                     |
+| 2                   | 2                     |
+| 3                   | 5                     |
+| 4                   | 7                     |
+| 5                   | 10                    |
+| 6                   | 15                    |
+| 7                   | 22                    |
+| 8                   | 18                    |
+| 9                   | 13                    |
+| 10                  | 8                     |
+
+The mean degree of liberality (or, equally, conservativeness) in the full population of university students.
+
+The sample mean is used to estimate the average value for the variable in the population; it’s an estimate of the population mean. It is called sample mean because it is based on the mean found in the sample. The sample mean might not turn out to be the mean value in the population, but it’s the most likely value and thus our best guess.
+
+Now, recall from Chapter 9 how to calculate the mean: you sum the scores, and then divide by the total number of students. For this data set, the mean score is 6.82. (College students do tend to be a rather liberal bunch, on average.) This score is the sample mean. If the sample is representative—this idea was introduced in Chapter 3 and is discussed further later—this score is most likely to be the mean value in the population of university students.
+
+Just like there’s a sample mean, there’s also a sample standard deviation; this is an estimate of the spread of the probability distribution for the random variable. Standard deviation, as introduced in Chapter 9, is a measure of the frequency distribution for the data set, while the sample standard deviation is instead an estimate of the probability distribution. The word sample is included, as with sample mean, to signal that this is a prediction about the population on the basis of data about the sample.
+
+Sample standard deviation is also calculated in a slightly different way from the standard deviation formula introduced in Chapter 9. The sample standard deviation (s) is calculated as follows:
+
+$s = \frac{\sqrt{\sum{(value-mean)}^2}}{N-1}$
+
+For comparison, standard deviation (*σ) is calculated from √[∑(value − mean) / 2N. The change is the denominator: N – 1 (for the sample standard deviation, s*) instead of N. This is a way of correcting for systematic underestimation about the population mean. We won’t ask you to perform this calculation here, but for our example of estimating the political views of university students, the sample standard deviation of the data set works out to be 1.98.
+
+The probability distribution estimated with the sample mean and sample standard deviation is the “middleman” so to speak: a statistical model enabling a prediction of the characteristics of interest in the population. A helpful rule of thumb for getting a rough probability estimate of a characteristic of interest, given its standard deviation, is the **68–95–99.7 rule**. This rule can be used to remember the percentages of probabilities within a certain range around the mean in a normal distribution. It says that about 68%, 95%, and 99.7% of the values lie, respectively, within one, two, and three standard deviations of the mean. (The other 32%, 5%, and 0.3% are equally scattered on either side of these ranges.) Look back at Figure 9.11 in Chapter 9 to see a visual depiction of this.
+
+Applying the 68–95–99.7 rule to our example of political views of university students (taking into account sample mean and sample standard deviation) yields the following results. Any given student has a 68% probability of having a score between 4.84 and 8.80 on our conservative/liberal scale, which is calculated by subtracting/adding the sample standard deviation (1.98) from/to the sample mean (6.82). Given that 5.00 is the dividing line between liberal and conservative, a student thus has about a 68% chance of being more liberal than conservative. Any given student has a 95% probability of having a score of 2.86 to 10.00, which is calculated by subtracting/adding two standard deviations (3.96) from/to the mean (6.82). We can be much more confident that some student will fall within this range than within one standard deviation, but it is also a wider, and thus less informative, range. The only thing this tells us is that most (95%) of college students are predicted to be outside the most conservative part of the scale.
+
+#### Managing errors in estimation
+
+A complication in using a sample mean to make predictions about the mean of a population is that the sample mean can vary from sample to sample. Were you to sample a different 100 students at the university, you could get a sample mean of 5.00 or 6.93 (for example) instead of 6.82. The distribution of the sample means you would get from repeated sampling is called the **sampling distribution of the sample mean”. How much this varies from the true population mean can be estimated with the standard error. Standard error measures sampling error. This can be calculated as:
+
+$SE = s / √(sample size)$
+
+As earlier, *s* is the sample standard deviation. The standard error measures the precision of the sample mean, that is, how much uncertainty there is about the estimated mean of the population. The formula shows that the standard error, and hence uncertainty about the population mean, decreases as the sample size increases. This is because a large sample size helps control for chance variation. For our imagined survey of political views, the standard error is 1.98/√100, which is .198.
+
+The standard error can be used to calculate a confidence interval. A sample mean score is a point estimate: it gives you a single value to serve as your best guess of the true population mean. If the sample is large, your point estimate will be good, but you can’t know how good. Confidence intervals provide this type of information. A confidence interval is an interval within which the value of the variable should lie for a given percentage of possible samples. For our political survey with a standard error of .198, 68% of sample means will fall within .198 of the true population mean, and 95% will fall within .396 of the true population mean. (This is for the same reason as the 68–95–99.7 rule introduced earlier.) So, for the sample mean of 6.82, the interval 6.42–7.22 will contain the true population mean 95% of the time.
+
+Standard error and confidence intervals are ways to measure sampling error due to chance variation. (Recall from Chapter 9 that sampling error is the difference between the features of a sample and a population due to the unrepresentativeness of the sample.) Larger samples can be expected to have less sampling error than smaller samples, that is, to be more representative.
+
+In Chapter 3, we introduced the idea of random sampling, using a chance method for selecting a sample to investigate from the population so every member of the population has an equal chance of being selected for participating in an experiment. Besides chance variation, a sample might be unrepresentative due to nonrandom sampling. Samples chosen in ways that make some individuals in a population less (or more) likely to be included than others will introduce bias in the inferences made about the population based on the sample. A poll that only solicited the political views of the students in a particular club, for example, may not be representative of the views of the full student population.
+
+Here’s a historically significant case of nonrandom sampling resulting in serious sampling error. In 1936, a magazine, Literary Digest, sent out 10 million postcards asking Americans how they would vote in the year’s presidential election. They received almost 2.3 million back, which is a very large sample. In that sample, Alfred Landon had a decisive lead over Franklin Roosevelt: 57% to 43%; Figure 10.3 shows the headline of the story they ran about the poll’s result. The Digest did not gather information that would allow it to judge the representativeness of its sample. A young pollster, George Gallup, utilized a much smaller sample of 50,000 (which is still larger than most modern political polls). His sample was representative, and it showed Roosevelt on track to win by a landslide. That was, of course, the eventual outcome of the election. The Literary Digest closed down soon after, and Gallup’s name lives on in the well-known Gallup poll approach to measuring public opinion based on surveying a sample.
+
+In many research contexts, random sampling and large sample sizes are very difficult to accomplish. For example, in a telephone poll of voter preference prior to an election, the phone numbers dialed can be randomly selected. But who picks up the phone, whether a person hangs up immediately or answers the questions, and even who has a phone and who doesn’t are all nonrandom influences on the people sampled, and those influences might correlate with voter preferences. And, even when sampling is truly random, smaller samples have greater sampling error.
+
+Still, as with so many decisions in science, real‐world limitations need to be factored into sampling procedures. Sometimes researchers can’t eliminate confounding variables but only limit them as much as feasible and note that confounding variables are possible. As important as representative samples are, simply pointing out that a sample isn’t truly random or is somewhat limited in size isn’t usually reason to entirely dismiss a prediction or estimation based on a sample. Careful analysis is needed of sampling procedure, potential confounding variables, and statistical properties like sample standard deviation and sampling error.
+
+##### EXERCISES
+
+10.7 Recall: Define sample mean and sample standard deviation and indicate how these differ from mean and standard deviation for descriptive statistics, considering what each measure means and how it is calculated.
+
+10.8 Think: Summarize the steps of estimating population values on the basis of a sample.
+
+10.9 Apply: There are 3,000 people at a party. (It’s a very large party!) 100 are interviewed at random, and it is discovered that 80 are philosophers, 10 are geologists, and 10 are artists.
+
+- a. What’s the percentage of philosophers in this sample of 100 party guests?
+- b. What’s the point estimate for the percentage of philosophers at the party?
+- c. Suppose the standard error for this data is .08, or 8%. What’s the probability that the percentage of philosophers at the party is in the range of 72-88%? (Hint: consult the discussions above about confidence intervals.)
+- d. You’re 95% sure that the percentage of philosophers at the party falls within a certain range. What range is that?
+- e. Can you conclude most of the partygoers are philosophers? Why or why not?
+
+10.10 Think: Consider the following statements according to the information provided in Exercise 10.9. For each, say whether the data support the conclusion. Motivate your answers with reference to the information provided and what you know about statistical estimation.
+
+- a. It’s highly probable that the majority of party guests are philosophers.
+- b. 80% of the people at the party are philosophers.
+- c. It’s more likely than not that at least 8% of the guests are non-philosophers.
+- d. It’s highly likely that the geologists are outnumbered at this party.
+- e. It’s highly probable that most people in the world are philosophers.
+
+10.11 Recall: Describe how sample size and representativeness matter for estimation.
+
+10.12 Apply: Find an article in a newspaper, magazine, or reputable online source that draws conclusions from a poll. Alternatively, your instructor may provide one article for the whole class to use for this exercise. Answer the following questions; if you can’t find the answer, say so, providing your best guess if possible. If you selected your own article, please submit a copy or printout of it with your responses.
+
+- a. What variable was under investigation? What were the researchers interested to know?
+- b. What was the sample size? How was the sample selected?
+- c. Is the sample likely to be representative? Why or why not?
+- d. What data did the researchers collect about the sample?
+- e. What conclusions about the population did the researchers draw from the sample?
+- f. Assess the poll, the results, and the researchers’ conclusions. Are there any problems with any of these? How could the poll or the conclusions be improved?
+
+#### 10.3 STATISTICS IN HYPOTHESIS-TESTING 
+
+After reading this section, you should be able to:
+
+- • List the steps of statistical hypothesis‐testing and describe the role of each
+- • Assess whether to reject the null hypothesis from data and a probability distribution, supporting your reasoning with statistical considerations
+- • Define statistical significance, p-value, type I and type II errors, and effect size and analyze these in an example
+
+#### Null hypothesis significance testing
+
+Methods for inferential statistics are routinely used to test hypotheses. While there are lots of different methods for hypothesis‐testing that are suited to different circumstances, these methods generally involve the use of sample data to infer whether and to what extent the available evidence confirms or disconfirms competing hypotheses about the phenomenon. This is what happened when scientists at CERN rejected the possibility that the bump in their data was due simply to chance and instead posited a newly discovered particle, the Higgs boson, as the source of the data.
+
+In this section, we’ll focus on one prominent approach to statistical inference for testing hypotheses, namely null hypothesis significance testing (NHST).
+
+In this approach, two competing statistical hypotheses are formulated. One is the null hypothesis, which is a kind of default assumption; often, this just amounts to the hypothesis that nothing unusual is going on or that two variables are independent. For the scientists at CERN, this was the hypothesis that the bump in their data was just generated by background noise. The other hypothesis is the alternative hypothesis, since it is posited as an alternative to the default assumption; this is a bold conjecture under investigation. For the scientists at CERN, this alternative was the hypothesis that a new particle, the Higgs boson, was responsible for the bump in their data.
+
+The null hypothesis leads one to expect a certain range of data and is generally, but not always, just a negation of the alternative hypothesis—the bold conjecture. When the data collected are within that range, there’s no grounds for questioning the null hypothesis. But when the data collected are sufficiently far outside the range of data expected from the null hypothesis, scientists reason that such data would be overwhelmingly unlikely if the null hypothesis were true. And so, in that case, they reason that the null hypothesis is likely to be false and should be rejected. The data instead support the alternative hypothesis—the bold conjecture.
+
+This is basically a statistical version of the hypothetico-deductive (or H-D) method encountered in Chapter 6: expectations are derived from a hypothesis, and if observations don’t match those expectations, the hypothesis is rejected (or, at least disconfirmed). In statistical hypothesis-testing, expectations for likely values of a random variable are determined from the null hypothesis. If a value is observed that falls far enough outside the expected range, the null hypothesis can be rejected, and, in its place, the alternative hypothesis can be tentatively accepted for further scrutiny. When scientists fail to reject the null hypothesis, their test results are deemed inconclusive. Technically this does not provide evidence in favor of the null hypothesis because the alternative hypothesis hasn’t been ruled out by the data. Just like the H-D method, the value of NHST is when it identifies grounds to reject a null hypothesis.
+
+In null hypothesis significance testing, as with estimation, inferential statistics is used to generate a probability distribution for potential outcomes based on the null hypothesis. This probability distribution represents the expectations if the null hypothesis is true. The scientists at CERN set out a protocol for statistical analysis in advance of gathering data, which enabled them to determine, for any bump in data observed, how probable that bump would be given the null hypothesis that no boson was responsible.
+
+The probability distribution provides a statistical framework for assessing data that are collected. Data are evaluated for the degree to which they violate expectations based on the null hypothesis. For the unexpected bump in data observed at CERN, scientists determined that if the null hypothesis were true—that is, if no boson were responsible—then the probability of observing the bump in data would be extremely low: about one in three million.
+
+So, probabilistic expectations are developed from the null hypothesis with the use of inferential statistics, and actual observations are compared with those expectations. Then, finally, scientists draw a conclusion from that comparison. This final step is always a judgment call. Scientists have to decide how unlikely the data would have to be, given the null hypothesis, to warrant them rejecting the null hypothesis. If the observations are not too far from what is expected from the null hypothesis, then scientists have no reason to reject the null hypothesis in favor of the alternative hypothesis. If, on the other hand, the observations do violate expectations, then this provides a reason to reject the null hypothesis in favor of the alternative hypothesis. This was the exciting scenario encountered at CERN: given the observation of a bump in data that would have been exceedingly unlikely without a boson responsible for it, the scientists rejected the null hypothesis and declared they had evidence for accepting the alternative hypothesis. That is, they declared they had discovered the long-sought Higgs boson, a new kind of fundamental particle.
+
+The steps of NHST are summarized in Table 10.3, emphasizing how these steps conform to the basic ingredients of scientific methods—hypotheses, expectations, and observations—outlined in Chapter 2.
+
+Developing probability distributions
+
+How did the CERN scientists determine that the probability of the data they collected was so miniscule if the null hypothesis were true? That question is at the heart of null hypothesis significance testing. To answer it, let’s turn our attention to a classic experiment on the tasting of tea, due to Ronald Fisher, a geneticist and one of the designers of NHST.
+
+Imagine a friend asks you, when preparing tea for her, to add milk to the cup first and only then add the tea. She claims she can discriminate by taste the order in which the milk and the tea were poured into the cup—she thinks the tea tastes better when the milk is added first. Intrigued, you decide to test this claim. 
+
+##### Table 10.3 Summary of steps in statistical hypothesis-testing
+
+| Step         | Procedure                                                    |
+| ------------ | ------------------------------------------------------------ |
+| Hypothesis   | Formulate alternative hypothesis (the bold conjecture) and corresponding null hypothesis (the default expectation) |
+| Expectations | Determine what range of outcomes and probability distribution to expect if the null hypothesis were true |
+| Observations | By experiment or observational study, determine one or more actual outcomes |
+| Conclusion   | Evaluate whether the actual outcome is unlikely enough given expectations from the null hypothesis to provide grounds for rejecting the null hypothesis |
+
+# 
+
+According to the steps of NHST, summarized in Table 10.3, you should start by formulating the null and alternative hypotheses. In this circumstance, what would you choose for each of these? The bold and speculative conjecture is that your friend really can discern by taste the order in which milk and tea were poured into a cup. This would be surprising! The null hypothesis is simply that your friend cannot do this. This is, probably, your default assumption.
+
+You prepare a cup of tea out of view, tossing a fair coin to determine whether you pour tea or milk first. (This randomizes the order, which is a way to control for extraneous variables; recall our discussion of randomization.) Then, your friend has a sip. She says that you added the tea first, and she’s right. But this isn’t terribly impressive; there was a .5 probability of her guessing correctly by accident, since either the tea was poured first in the cup or else the milk was. To see whether there is support for the alternative hypothesis, whether the evidence really supports your friend’s claim, you need to have your friend make repeated guesses that are, on average, much more accurate than chance would allow.
+
+You prepare eight new cups of tea at once, tossing a coin to determine milk-first or tea-first for each. You put the cups of tea in front of your friend and ask her to say of each whether the milk or the tea was added first. What does the null hypothesis lead us to expect? We can develop a probability distribution to let us know what to expect if your friend is just guessing at random. As with estimation, the probability distribution can be characterized by a mean and standard deviation.
+
+If your friend is merely guessing, she is most likely to be right about four of the eight cups. This is the mean expected outcome, which you can calculate by multiplying the probability of success on each trial, which we said was .5, by the number of trials: mean = Pr(O=success) × # trials = .5 × 8 = 4.
+
+In this context, the mean is the most likely outcome. If your friend were to make repeated guesses about the eight cups, and the null hypothesis were true, most of the time she’d be right about four cups. Since your friend is only making guesses about one series of eight cups, the mean indicates the most likely outcome. But this outcome is not guaranteed, even if the null hypothesis is true. By sheer luck, your friend might guess correctly more often or less, just as you might happen to get more or fewer heads than 50% in a series of coin tosses.
+
+The standard deviation for the probability distribution can be calculated using this formula:
+
+σ = √[mean × (1 − Pr(O=success))]
+
+Notice that this is very different from the other standard deviation formulas we have encountered. Here, 1 is the total probability, and Pr(O=success) is the probability of success (in the tea experiment, guessing correctly) in a single trial. Multiplying that by the mean number of successes yields the variance; the square root of that number is, then, the standard deviation. For the tea experiment, the standard deviation is √[4 × (1 − .5)] = √2 = 1.414.
+
+Figure 10.4 shows the probability distribution of the number of guesses your friend will get correct if she is randomly guessing, that is, if the null hypothesis is true. This probability distribution can be estimated from the range, mean, and standard deviation that we have calculated.
+
+The probability distribution can be used to establish the significance level required for rejecting the null hypothesis. This is a decision about how improbable, given the null hypothesis, an experimental result must be to warrant rejecting the null hypothesis. Later we’ll discuss some further considerations for this choice. For now, we’ll adopt .05 as the significance level, which is the most common choice.
+
+#### Assessing statistical significance
+
+With all of this preparatory statistical work completed, you are now ready to test your friend’s tea‐tasting skills. This is the third step NHST: collecting the data. You ask your friend to judge “tea‐first” or “milk‐first” for all eight cups of tea. She correctly judges all eight cups! Given this data, would you be tempted to conclude that you were wrong and your friend was right, that maybe she can perceptually discern something about tea and milk order?
+
+There are two possibilities consistent with the data: (1) the null hypothesis is true, and our experimental result was an unlikely event of eight correct guesses purely by chance, or (2) the null hypothesis is false, and the alternative hypothesis that your friend can discriminate between milk‐first and tea‐first cups of tea is true. The goal of statistical hypothesis‐testing is to do our best to decide whether (1) should be rejected in favor of (2). The probability distribution we’ve prepared can tell us exactly how unlikely our experimental result would be if (1) is the case, which should guide our decision of whether to reject (1).
+
+From the outcome of the experiment, when your friend correctly judged all eight cups of tea as tea‐first or milk first, we can calculate a p-value. This is the probability of the observed data (or even more extreme outcomes) assuming the null hypothesis is true. The smaller the p‐value, the more unlikely your observed data is if the null hypothesis is true. Notice that the p-value doesn’t give us the probability that the null hypothesis is true.  or the probability that the alternative is true. It is just a yardstick we can use to answer the question: how likely is it to get data like you have observed if the bold conjecture you are interested in is not true?
+
+We can visually estimate the *p-value for the tea-tasting experiment from Figure 10.4: it’s clear there is only a very small chance of guessing all eight cups correctly via random guessing. We can find the precise p*-value with the multiplication rule; it’s just the probability of the first guess being correct by chance multiplied by the probability of the second guess being correct by chance, and so on, for all eight guesses: 0.5 × 0.5 × 0.5 × 0.5 × 0.5 × 0.5 × 0.5 × 0.5, or 0.58, which is .0039. The probability of your friend guessing correctly on all eight cups by random guesswork is only .0039, or 0.39%. Put another way, if your friend tasted many series of eight cups of tea, she could get this outcome by guessing randomly only about one out of 256 series of eight cups. If she guessed all eight correctly by sheer luck, on her first try, she’s really lucky!
+
+Whether one should reject the null hypothesis is determined by comparing the *p-value and the significance level. If the *p*-value is less than or equal to the significance level that had been selected, the researchers can reject the null hypothesis with reasonable confidence. When the p-value is greater than the significance level, we can’t rule out the null hypothesis. The p*-value of .0039 in our tea-tasting experiment is lower than our chosen significance level of .05, and so the outcome of this experiment is statistically significant. That means the outcome is unlikely enough if the null hypothesis is true that it provides grounds for rejecting the null hypothesis.
+
+Most p-values can’t be calculated so simply from probabilities as the one in our tea-tasting example. Another approach to evaluating statistical significance uses the mean, standard deviation, and 68–95–99.7 rule introduced in the previous section. By the 68–95–99.6 rule, outcomes that are two standard deviations away from the mean are the threshold for statistical significance at the significance level of .05. Two standard deviations in this case is 2.828 (1.414 × 2), so outcomes outside the range of 4 (the mean) ± 2.828 are statistically significant. That range is 1.17 to 6.828. So, guessing eight cups correctly is statistically significant at the .05 level.
+
+Notice that statistically significant results aren’t necessarily important results. Here significance is a technical term that only means grounds for rejecting the null hypothesis. Many statistically significant results from NHST are theoretically uninteresting and practically irrelevant. Like the tea-tasting experiment, you could test whether people can reliably distinguish humans from dogs when passing them on the street. If your observations are statistically significant, thereby allowing you to reject the null hypothesis that people cannot distinguish between dogs and humans, you wouldn’t be surprised. So, we should be wary of statistically significant findings that are nonetheless not worth our attention.
+
+Another important feature of data that might be confused with statistical significance is effect size, which is a quantitative measure of the strength of a phenomenon, that is, of the magnitude of difference some variable makes. Statistical significance does not mean the effect size is large; the latter is a separate question. So, just as statistical significance doesn’t guarantee an important finding, it also doesn’t guarantee a strong influence. If you surveyed enough of the incoming students at a university, you might be able to conclude that their political views were more liberal or conservative, on average, than those of existing students—even if the difference were miniscule. Sometimes scientists represent the effect size along with the statistical significance of their findings, and this additional information can help put the finding into perspective.
+
+#### Drawing conclusions
+
+Comparing the p-value of the experimental outcome to the significance level provides a simple, objective criterion for deciding whether to reject the null hypothesis on the basis of observations. But there is a role for choice in what level of statistical significance to require. One can always ask whether this outcome is unlikely enough to reject the null hypothesis. This is a version of the more general decision we’ve seen elsewhere in this book regarding when there’s sufficient evidence to believe a hypothesis.
+
+In many fields, it’s common to use a significance level of .05 as the dividing line. Observed results with a probability of less than .05 given the null hypothesis are said to be statistically significant at the .05 level. One can abbreviate this: p < .05. This is true of the outcome of our tea-tasting experiment, which is why we rejected the null hypothesis. Notice, though, that we could still be wrong: it’s possible that our friend really was just extraordinarily lucky. But if we instead decided to play it safe and not reject the null hypothesis, we could be wrong about that as well. We might have then failed to detect our friend’s tea-tasting superpower. By its very nature, statistical hypothesis-testing gives no guarantees.
+
+The choice of significance level indicates the degree to which you’re willing to accept the risk of erroneously rejecting the null hypothesis when it is true versus the risk of erroneously failing to reject the null hypothesis when it is false. These are the two different ways you could be wrong, and one or the other is always a risk. The risk of erroneously rejecting the null hypothesis when it is true is called a type I error, or false positive. The risk of erroneously failing to reject the null hypothesis when it is false is called a type II error, or false negative.
+
+Scientists sometimes adjust the conventional .05 line for statistical significance considering whether type I or type II errors are riskier. Requiring a lower significance level means that you need stronger evidence to reject the null hypothesis; this decreases the chance of a type I error but increases the chance of a type II error. Requiring a higher significance level means that you need less evidence to reject the null hypothesis; this decreases the chance of a type II error but increases the chance of a type I error.
+
+Imagine a new drug is being tested. If the drug is for a life-threatening illness with no treatment options otherwise—say, pancreatic cancer or Ebola—and experiments regarding the efficacy of the drug find it works better than a placebo with a p-value of .055, just missing the line for statistical significance at .05, researchers may still be inclined to bring the drug to market or at least continue testing. This result suggests the drug is very likely better than nothing! They want to avoid the type II, or false negative, error of accidentally rejecting a treatment that might be valuable. In contrast, if scientists are thinking about announcing a new particle, and they know their colleagues will scrutinize their findings, they may be especially careful about avoiding a type I or false positive error, and so will lower the significance level. The Higgs boson discovery was only announced after the probability of the experimental data was found to be just one in three million assuming the null hypothesis of no boson present. This significance level is so close to zero, it’s difficult to even display numerically.
+
+A related issue is that statistical tests vary in their power to detect an effect. The power of a statistical test is the probability that the test will enable the rejection of a null hypothesis. More powerful tests increase the chance of rejecting the null hypothesis, thus decreasing the chance of a type II or false negative error, where we fail to reject the null hypothesis when it is actually false. Power increases with sample size. In the tea-tasting experiment, we weren’t able to reject the null hypothesis after one cup was guessed correctly, but we were able to after eight cups were guessed correctly. Increasing sample size to increase the power of a statistical test can be a good thing, but it also has a downside: this increases the chance of making a type I or false positive error. Studying a very large sample makes it relatively easy to uncover statistically significant findings, but this also makes it relatively easy to erroneously reject the null hypothesis—that is, to uncover findings that turn out to be false.
+
+Statistical tests that increase power by using very large samples also enable findings that have very small effect sizes. For example, a certain gene has been linked with the chance of someone smoking cigarettes: if you have this gene, you are more likely to smoke cigarettes. Can researchers tell from your genes whether you have smoked, or will smoke? As the researchers acknowledged, absolutely not: there was only a very weak relationship. Finding factors with very small effect sizes has advantages and drawbacks. It can be useful to detect subtle statistical relationships, but weak statistical relationships are often uninteresting or unimportant. Further, it’s not uncommon for people to take too seriously a statistical relationship with a very small effect size, especially if the finding fits with our expectations.
+
+##### Box 10.1 Types of statistical hypothesis-testing
+
+We have characterized null hypothesis significance testing as if it were a single technique, but there are actually multiple forms of statistical hypothesis-testing, with different names and different uses. Which type of test should be used depends on the kind of hypothesis under investigation, the type of data available, and other circumstances. The sort of statistical hypothesis-testing we’ve encountered in this section are t tests, where data about some group are used to test whether the group deviates systematically from what’s typical. But t tests come in multiple varieties, depending on how many samples of data researchers collect and whether the alternative hypothesis predicts how the sample will deviate from the population mean. So, you might hear of one-sample or two-sample t tests, or one- or two-tailed t tests, for example. Another approach is analysis of variance, or ANOVA, which is used when there are more than two groups to compare. ANOVA also comes in multiple versions for different circumstances of statistical analysis. Pearson’s r, in turn, is used to test whether a correlation in a sample provides a basis for concluding the variables in question are correlated in the population (the alternative hypothesis). All of these approaches to NHST share the same basic structure, but they differ mathematically and in how the results should be interpreted. There are also statistical techniques for when we can’t assume a variable has a normal distribution. Calculations of any of these types of statistical tests are typically now carried out using software—so the hard part isn’t the math but understanding and interpreting its significance.
+
+##### EXERCISES
+
+10.13 Recall: In your own words, define statistical significance, p-value, and effect size. Then, give an example of a result that is statistically significant but not important.
+
+10.14 Apply: Consider the tea-tasting experiment again. Suppose that your friend correctly guessed six cups of tea instead of all eight. Decide whether this result is statistically significant at the .05 level by using the mean and standard deviation calculated previously and applying the 68–95–99.7 rule. Then, say whether this outcome is a basis for rejecting the null hypothesis.
+
+10.15 Apply: It’s estimated that 10% of the general population is left-handed. Imagine testing whether your group of friends contains an unusually large number of left-handed people. Let’s say you have 75 friends, and 14 of them are lefties.
+
+- a. Write out the null hypothesis and alternative hypothesis.
+- b. Calculate the mean and standard deviation for how many of your group of friends would be expected to be lefties if the null hypothesis were true.
+- c. From the information you calculated in (b), evaluate whether the data are significant at the .05 level.
+- d. Decide whether to reject the null hypothesis, and justify your decision with statistical considerations.
+- e. Is your decision at risk of a type I or type II error? Why?
+
+10.16 Apply: Each of the following is a bold conjecture that can serve as an alternative hypothesis. For each, (i) formulate the null hypothesis, (ii) describe what a type I error would be and what a type II error would be, and (iii) say which kind of error would be more serious, and why.
+
+- a. Adding water to toothpaste helps protect against cavities.
+- b. This man is guilty of murder.
+- c. The use of social media makes users depressed.
+- d. The new drug is more effective than the old drug.
+- e. The new drug is more dangerous than the old drug.
+- f. Reading books promotes happiness.
+
+10.17 Think: Classify each of the following statistical techniques as belonging to descriptive statistics, statistical estimation, or statistical hypothesis-testing. Give your rationale for each answer.
+
+- a. displaying a data set in a chart
+- b. surveying a group about their pizza preferences to decide if they have an unusual preference for anchovies
+- c. surveying a group about their pizza preferences in order to place an order
+- d. calculating the sample mean and sample standard deviation
+- e. surveying a group about their pizza preferences in order to guess what all Canadians’ pizza preferences are
+- f. finding the mean level of preference for anchovies on pizza among a group and the standard deviation in that level of preference
+- g. rejecting a null hypothesis on the basis of data
+- h. finding the correlation coefficient of a data set
+
+10.18 Think: Scientific journals tend to publish statistically significant results much more often than they publish findings of statistical insignificance. Why do you think this might be? Considering the earlier discussion about power, type I and II errors, and effect size, can you think of any concerns with this practice?
+
+### 10.4 DIFFERENT APPROACHES TO STATISTICAL INFERENCE
+
+After reading this section, you should be able to:
+
+- Characterize three limitations of classical statistics and how Bayesian statistics solves each of them
+- Describe how Bayesian statistics can be used (1) to establish the probability a hypothesis is true given an observation and (2) to compare how much an observation favors different hypotheses
+- Describe two problems with Bayesian statistics
+
+#### Problems with classical statistics
+
+Null hypothesis significance testing, the approach to statistical hypothesis-testing described so far, is part of classical statistics, also called frequentist statistics. This approach is called “classical” because it is more or less standard—at least presently. But it’s not the only game in town, and someday it may no longer be the standard way of doing statistics.
+
+In this section, we’ll describe three limitations of classical statistics. To set up the discussion, think back to the last step of the procedure of NHST. What results from this application of inferential statistics is a p-value: that is, the probability of the observation occurring given that the null hypothesis is true, which is then compared with a pre-established significance level to decide if the data are statistically significant. There are three oddities about this.
+
+The first oddity is that scientists’ primary interest in statistical hypothesis-testing is to figure out which hypotheses are true. But a p-value doesn’t indicate how probable the hypothesis itself is, that is, how likely the hypothesis is to be true. It only indicates how probable observed data are if the null hypothesis is true. If the p-value is small enough, we can decide that the observations we in fact made are so unlikely given the truth of the null hypothesis that we should reject the null hypothesis. But we still don’t know anything about the chance the null hypothesis is true.
+
+A second limitation is that NHST doesn’t allow us to take into account any prior information we might have in favor or against the truth of the null hypothesis. For example, in our tea-tasting example, it may be the right decision not to reject the null hypothesis even though your friend guesses correctly so often. What we know about how tasting works and about what properties a cup of tea can and can’t have suggest this tasting feat should be impossible. Maybe your friend was just extraordinarily lucky, or maybe she had a way of cheating. In contrast, someone discerning two different types of wine in a blind taste test wouldn’t really be that surprising. The same success rate may thus lead us to want to reject the null hypothesis of random guessing for wine tasting but not reject the null hypothesis of random guessing for tea tasting. As this illustrates, we often find different hypotheses more or less credible, and it seems this should influence our threshold for how much evidence we require to believe them. NHST does not allow us to take such prior information into account.
+
+A third limitation of classical statistical techniques like NHST is that the statistical test doesn’t directly relate to the alternative hypothesis at all. Again, all we are learning is the probability of the data we observed if the null hypothesis is true. And yet, the alternative hypothesis, the bold and speculative conjecture, is what scientists are truly interested in evaluating. How likely is the alternative hypothesis to be true? This is the million-dollar question in hypothesis-testing, but NHST gives us no way to answer it.
+
+#### Bayesian statistics
+
+The Bayesian approach to statistics solves all three of these problems with classical statistics. The Bayesian approach to statistical hypothesis-testing aims to determine when data count as evidence for one hypothesis and against a competing hypothesis and how data should change our degree of belief that each of these competing hypotheses is true. Bayesian statistics is based on Bayes’s theorem and the subjectivist interpretation of probability, both introduced in Chapter 8. For Bayesians, an observation counts as evidence for a hypothesis when it raises our rational degree of belief in the hypothesis.
+
+The simplest formulation of Bayes’s theorem applied to a hypothesis and observation is:
+
+Pr( H | O ) = Pr( O | H ) Pr( H ) / Pr( O )
+
+This formula states that the probability of a hypothesis H given an observation O — which is what we want to find out — is the probability of the observation given the hypothesis multiplied by the prior probability of the hypothesis, then divided by the probability of the observation.
+
+Pr( H ) is the prior probability of the hypothesis, while Pr( H | O ) is the posterior probability of the hypothesis. The prior probability is our rational degree of belief before (prior to) making the observation, while the posterior probability is our rational degree of belief after (posterior to) making the observation. Considering the prior probability of a hypothesis is a way of holding implausible hypotheses to a higher standard of evidence than plausible hypotheses. So, we’d look for more evidence before agreeing that someone can tell milk-first or tea-first in a cup of tea than we would before agreeing that someone can tell the difference between different kinds of wine.
+
+This formula takes three things as input: the prior probability of the hypothesis, Pr( H ); the probability of the observation if the hypothesis is true, Pr( O|H); and the probability of the observation under all possible hypotheses, Pr( O ). If all three of these probabilities are known—a major source of controversy for Bayesian statistics—we can use them to calculate the probability the hypothesis is true given the observation that has been made (or the data that have been gathered). And this is the main thing scientists want to discover from statistical hypothesis-testing.
+
+Additionally, comparing prior and posterior probabilities shows us whether an observation confirms or disconfirms a hypothesis and by how much. If Pr( H | O) > Pr( H ), then the observation O confirms hypothesis H. In other words, an observation confirms a hypothesis if the probability of the hypothesis—the rational degree of belief that the hypothesis is true—goes up once the observation has been made. A big increase in probability implies a large degree of confirmation, and a small increase implies a small degree of confirmation, while a big decrease in probability implies a large degree of disconfirmation, and a small decrease implies a small degree of disconfirmation.
+
+Bayes’s theorem also can be used to calculate the degree to which some observation or data set favors one hypothesis over another. Posterior probabilities can be calculated for any number of hypotheses from the same observation, considering the prior probabilities of the various hypotheses and the probability of the observation given each of the various hypotheses. These posterior probabilities can then be compared with one another to decide which hypothesis is more likely given the observation that’s been made. Unlike classical statistics, this provides a comparative approach to hypothesis-testing.
+
+There’s also a shortcut to comparing how much an observation favors different hypotheses. It’s possible to compare the likelihood of the observation given each hypothesis, or Pr( O | H ) versus Pr( O | H1), instead of posterior probabilities. These likelihoods are usually easier to find than posterior probabilities. An observation favors one hypothesis over another to the degree that the first hypothesis predicts the observation better than the other hypothesis does. This can be expressed numerically with the Bayes factor, which is the ratio of the probability of the observation given one hypothesis to the probability of the observation given another hypothesis, that is, Pr( O | H )/Pr( O | H1).
+
+Imagine that Lasha and Janine are interested in public opinion about the theory of evolution. Lasha believes that 70% of the public is convinced by the theory of evolution, while Janine believes that 60% of the public is convinced. They decide to poll 100 randomly selected people about their views on evolution to decide which of these is correct. Lasha’s and Janine’s different hypotheses lead them to have different expectations: Lasha predicts that about 70/100 will believe in the theory of evolution; Janine predicts it’s about 60/100. (We can use tools of inferential statistics from earlier in this chapter to find the probability distribution each predicts for this random sample of 100 people.)
+
+As it turns out, of the 100 people surveyed, 62 said they are convinced by the theory. According to the probability distribution based on Lasha’s hypothesis of 70% belief in evolution, this observation has a probability of .02, that is, Pr(O | H1) = .02. According to the probability distribution based on Janine’s hypothesis of 60% belief in evolution, this observation has a probability of .08, that is, Pr(O | H2) = .08. The Bayes factor is .08/.02, or 4. The survey result favors Janine’s hypothesis over Lasha’s by a factor of 4.
+
+We’ve seen a few of the benefits of Bayesian statistics over classical statistics, but Bayesian statistics faces its own problems. First, Bayesian statistics is often criticized for a lack of objectivity. There’s often not enough information to have objective grounds for the prior probability—the probability of the hypothesis before data are gathered—but this prior probability is needed to use Bayes’s theorem.
+
+In some cases, we can calculate prior probabilities from established facts. For example, the probability that a 42‐year‐old woman has breast cancer can be estimated from the incidence of breast cancer in the general population. But such data is unavailable for many hypotheses. Recalling our earlier example, what prior probability should the scientists at CERN have assigned to the hypothesis that they’d detect a Higgs boson? It doesn’t seem there’s an objective way to assign a probability to this possibility before they ran their experiments. Without objective information to guide the selection of prior probabilities, individual biases and subjective values can find their way in. This is a problem because prior probabilities influence posterior probabilities in Bayesian statistics, and so biases and subjective values could then influence the conclusions drawn from experimental data. This possibility seems to undermine the objectivity of Bayesian reasoning and is perhaps the main challenge facing Bayesian statistics.
+
+Some have responded to this challenge by suggesting rules for how prior probabilities should be established. Another response has been to suggest that exposing and taking into account people’s different background beliefs is actually a good thing. Different choices of prior probabilities make it transparent how two scientists’ judgments differ, so those differences can be justified by the scientists and assessed by others. In this respect, Bayesian statistics and classical statistics are similar. In NHST, researchers must decide on significance levels, sample size, and so forth, and these decisions are also judgment calls open to criticism. Nonetheless, the choice of Bayesian prior probabilities is a direct influence of background beliefs on degree of belief in hypotheses under investigation that many scientists are uncomfortable with.
+
+A second problem for Bayesian statistics is that it’s not obvious that posterior probabilities are always the best basis for updating one’s beliefs. Some have suggested that abductive reasoning, discussed in Chapter 7, can be a better alternative. Recall that when people engage in abductive reasoning, they use explanatory considerations as evidence to support one hypothesis over others. You see cheese crumbs, small droppings, and some chewed up paper, and so you might reason that a mouse resides in your kitchen. It’s not clear that these kinds of inferences follow Bayesian statistical analysis. The reasoning of paleontologists, for example, can be akin to “CSI”-style forensic work, what we called methodological omnivory in Chapter 4. They gather different kinds of evidence to assess the plausibility of hypotheses about the deep past. Statistics—Bayesian or classical—may not be involved at all.
+
+##### EXERCISES
+
+10.18 Recall: Describe three limitations for classical statistics, especially as it’s used in NHST.
+
+10.19 Recall: For each of the three limitations for classical statistics you described, indicate how Bayesian statistics avoids it.
+
+10.20 Recall: Write out Bayes’s theorem; label prior probability, posterior probability, and likelihood; and describe what Bayes’s theorem says when applied to a hypothesis and observation. Then, describe
+
+1. how Bayes’s theorem can be used to calculate the probability of a hypothesis given certain evidence, and
+2. how a Bayes factor can be used to compare support for two competing hypotheses.
+
+10.21 Apply: Suppose that your smartphone is being tested for a bug that affects about one device in a thousand. The bug could transfer all data on your phone to all your contacts. Your device has no apparent problem, and the test is accurate 90% of the time. This number means that if your smartphone actually has the bug, then the test result is positive with 90% probability, and if your smartphone does not actually have it, the test result is negative with 90% probability. After several anxious minutes, the test results come back: positive! Do you have good reason to be worried all your data will be exposed?
+
+1. Define the prior probability of the hypotheses that your device has the bug and that your device doesn’t have the bug, the probability of the test result given the hypothesis that your device has the bug, and the probability of the test result given the hypothesis that your device doesn’t have the bug.
+2. Explain how these probabilities can be used in Bayes’s theorem to determine whether you should be worried.
+3. Think again about this situation, considering that, out of 1,000 devices, 100 will test positive for the bug. Would this consideration change any step in your reasoning?
+
+10.22 Apply: You take an at-home covid test; it is negative. The false positive rate is less than 1%, while the false negative rate is about 20%.
+
+1. Write out the Bayes factor expression for this observation (negative test result) and the hypotheses that you do not have covid (H1) and that you do have covid (H2), then calculate the Bayes factor.
+2. What can you conclude from this Bayes factor? Can you conclude you do not have covid?
+
+10.23 Think: Describe two problems for Bayesian statistics. For each, analyze how problematic you think the problem is, giving reasons for your opinion.
+
+##### FURTHER READINGS
+
+For a historically informed treatment of different approaches to statistical inference and their relationships, see Gigerenzer, G. (1993). The superego, the ego, and the id in statistical reasoning. In G. Keren & C. Lewis (Eds.), A handbook for data analysis in the behavioral sciences: Methodological issues (pp. 313–339). Erlbaum.
+
+For a recent defense of the use of p-values and frequentism in statistical hypothesis-testing, see Mayo, D. G., & Cox, D. R. (2006). Frequentist statistics as a theory of inductive inference. In J. Rojo (Ed.), Optimality: The second Erich L. Lehmann symposium (pp. 77–97). Institute of Mathematical Statistics. And Mayo, D. G., & Hand, D. (2022). Statistical significance and its critics: Practicing damaging science, or damaging scientific practice? Synthese, 200(3), 220.
+
+For short, critical surveys of problems with null hypothesis significance testing, see McCloskey, D., & Ziliak, S. (1996). The standard error of regressions. Journal of Economic Literature, 34, 97–114; and especially, Gigerenzer, G. (2004). Mindless statistics. The Journal of Socio-Economics, 33(5), 587–606.
+
+For more on Bayesianism, see Howson, C., & Urbach, P. (2006). Scientific reasoning: The Bayesian approach (3rd ed.). Open Court.
+
+For a compact comparison between frequentist and Bayesian approaches to statistical inference, see Sprenger, J. (2016). Bayesianism vs. frequentism in statistical inference. In The Oxford handbook of probability and philosophy (pp. 382–405). Oxford University Press.
+

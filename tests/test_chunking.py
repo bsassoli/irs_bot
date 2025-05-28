@@ -9,7 +9,7 @@ from irs_bot.app import (
     load_config,
     create_chromadb_client,
     add_documents_to_chromadb,
-    chunk_text, query_chromadb,
+    query_chromadb,
     get_chatgpt_response
 )
 import chromadb.utils.embedding_functions as ef
