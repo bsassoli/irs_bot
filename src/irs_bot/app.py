@@ -299,6 +299,7 @@ def main():
     documents = chunk_text(config)
     
     add_documents_to_chromadb(collection, documents)
+    
     chat_with_knowledge_base(config, OpenAI(api_key=openai_api_key), collection)
 
     # Close the client
