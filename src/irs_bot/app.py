@@ -10,7 +10,7 @@ from openai import OpenAI
 from langchain_community.document_loaders import UnstructuredMarkdownLoader
 from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
 
-from irs_bot.prompt import SYSTEM_PROMPT, PROMPT
+from .prompt import SYSTEM_PROMPT, PROMPT
 
 import chromadb.utils.embedding_functions as ef
 

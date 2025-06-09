@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import logging
 
 # Import app components
-from irs_bot.app import (
+from .app import (
     load_config, 
     create_chromadb_client, 
     create_chromadb_collection,
