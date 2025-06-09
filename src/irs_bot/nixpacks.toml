@@ -1,15 +1,12 @@
 # nixpacks.toml
 [phases.setup]
-nixPkgs = ["python310", "pip"]
+nixPkgs = ["python310", "python310Packages.pip", "gcc"]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
-
-[phases.build]
-cmds = []
+cmds = [
+  "python -m pip install --upgrade pip",
+  "pip install -r requirements.txt"
+]
 
 [start]
 cmd = "python src/irs_bot/server.py"
-
-[variables]
-PORT = "8000"
